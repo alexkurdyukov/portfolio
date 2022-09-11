@@ -1,0 +1,33 @@
+.header {
+	background-color: #020c1b;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 35px 100px 35px 80px;
+	 	
+	&__nav {
+		display: flex;
+		gap: 50px;
+		.nav__item {
+			text-decoration: none;
+			color: #fff;
+			font-family: "Poppins";
+			font-style: normal;
+			font-weight: 400;
+			font-size: 23px;
+			line-height: 34px;
+		}
+		.header__button {
+			text-decoration: none;
+			color: #64ffda;
+			border: 1px solid;
+			border-radius: 2px;
+			padding: 3px;
+			font-family: "Poppins";
+			font-style: normal;
+			font-weight: 400;
+			font-size: 23px;
+			line-height: 34px;
+		}
+	}
+}

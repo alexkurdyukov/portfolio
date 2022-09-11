@@ -1,0 +1,16 @@
+@import '../../../components/Header/index';
+@import '../../../components/Intro/index';
+@import '../../../components/Game/index.scss';
+
+body{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	background: #020C1B;
+}
+
+.layout{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
