@@ -1,11 +1,11 @@
 import React from "react";
 
-const Button = ({text}) => {
-    return(
-        <span className = 'button'>
-            {text}
-        </span>
-    )
-}
+const Button = ({ className, children }) => {
+	return (
+		<span className={`button ${className == false ? '' : className}`}>
+			{children}
+		</span>
+	);
+};
 
-export default Button 
+export default Button;
