@@ -1,0 +1,27 @@
+.socials {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	align-items: center;
+	position: fixed;
+	left: 6%;
+	bottom: 6%;
+	&::after {
+		content: "";
+		width: 2px;
+		height: 130px;
+		margin-top: 10px;
+		background-color: #a8b2d1;
+	}
+	&__element {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 7px;
+		border: 1px solid white;
+		svg {
+			width: 30px;
+			height: 30px;
+		}
+	}
+}
