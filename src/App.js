@@ -111,7 +111,7 @@ const projectsData = [
 		name: "Aperture Studio",
 		technologies: ["HTML", "CSS"],
 		description:
-			"My first project on HTML,CSS.Also adaptive layout is implemented on the layout",
+			"My first project on HTML,CSS.Also adaptive layout is implemented on it",
 		verselLink: "https://aperture-studio-maket.vercel.app/",
 		githubLink: "https://github.com/alexkurdyukov/Aperture-Studio-Maket",
 	},
@@ -125,17 +125,17 @@ const projectsData = [
 	},
 	{
 		name: "React Portfolio",
-		technologies: ["HTML", "SCSS", "JavaScript",'React',],
+		technologies: ["HTML", "SCSS", "JavaScript", "React"],
 		description:
 			"It's my first react experianc,where i have used react states, hooks and also SCSS",
 		verselLink: "https://sattelite-images-maket.vercel.app/",
 		githubLink: "https://github.com/alexkurdyukov/Sattelite-Images-Maket",
-	},	
+	},
 ];
 const Projects = () => {
 	return (
 		<div className="projects projects__wrapper wrapper">
-			{(projectsData.map((project) => (		
+			{projectsData.map((project) => (
 				<div className="project">
 					<div className="project__icons icons">
 						<div className="icons__folder">
@@ -173,13 +173,11 @@ const Projects = () => {
 					</div>
 					<div className="project__technologies">
 						{project.technologies.map((technology) => (
-							<div className="technology">
-								{technology}
-							</div>
+							<div className="technology">{technology}</div>
 						))}
 					</div>
 				</div>
-			)))}
+			))}
 		</div>
 	);
 };
@@ -208,7 +206,7 @@ const App = () => {
 	// }, [page]);
 	return (
 		<div className="layout">
-			<Header setPage={setPage} />
+			<Header page={page} setPage={setPage} />
 			{page === "intro" && <Intro />}
 			{page === "about" && <About />}
 			{page == "projects" && <Projects />}

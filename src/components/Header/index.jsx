@@ -16,30 +16,26 @@ const headerData = [
 // 	link: {},
 // };
 
-const Header = ({ setPage }) => {
+const Header = ({ setPage, page }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
-	useEffect(() => {
-		console.log(`Состояние ${isOpen ? `виден` : `не виден`}`);
-	}, [isOpen]);
+	// useEffect(() => {
+	// 	console.log(`Состояние ${isOpen ? `виден` : `не виден`}`);
+	// }, [isOpen]);
 
 	return (
 		<div className="header">
-			<div className="header__wrapper" >
-				<div
-					className="header__logo-container"
-					onClick={() => setIsOpen(!isOpen)}
-				>
+			<div className="header__wrapper">
+				<div className="header__logo-container">
 					<HeaderLogo />
 				</div>
-				<nav className="header__nav nav">
+				<nav className={`header__nav nav`}> 
 					{headerData.map((item) => (
 						<div
-							className="nav__item"
+							className={`nav__item ${item.name == page ? "--active" : ""}`}
 							key={item.id}
 							onClick={() => {
-								setPage(item.name)
-								console.log(item.name);
+								setPage(item.name);
 							}}
 						>
 							<span className="nav__item-number">{item.id}</span>.{" "}

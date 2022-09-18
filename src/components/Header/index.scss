@@ -44,3 +44,8 @@
 		}
 	}
 }
+
+.nav__item.--active{
+	border-bottom:  1px solid $mainColor;
+	transition: 0.5s ease all;
+}
