@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useEffect } from "react";
 import Button from "../Button";
+import { ReactComponent as HeaderLogo } from "../../assets/images/header-logo.svg";
+import { useState } from "react";
 
 const headerData = [
 	{ name: "intro", id: "01" },
@@ -9,38 +11,43 @@ const headerData = [
 	{ name: "contact", id: "04" },
 ];
 
+// const headerData = {
+// 	nav: [{}, {}, {}],
+// 	link: {},
+// };
+
 const Header = ({ setPage }) => {
+	const [isOpen, setIsOpen] = useState(false);
+
+	useEffect(() => {
+		console.log(`Состояние ${isOpen ? `виден` : `не виден`}`);
+	}, [isOpen]);
+
 	return (
 		<div className="header">
-			<div className="header__wrapper">
-				<svg
-					className="header__logo"
-					width="120"
-					height="96"
-					viewBox="0 0 120 96"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
+			<div className="header__wrapper" >
+				<div
+					className="header__logo-container"
+					onClick={() => setIsOpen(!isOpen)}
 				>
-					<path d="M58 0L119.055 96H55.3064H0L58 0Z" fill="#64FFDA" />
-					<path
-						d="M58 9L110 90.5H76L82.5 71L70.5 96H54.2013L18.5 75L37 44L58 9Z"
-						fill="#020C1B"
-					/>
-				</svg>
-				<nav className="header__nav">
+					<HeaderLogo />
+				</div>
+				<nav className="header__nav nav">
 					{headerData.map((item) => (
 						<div
 							className="nav__item"
 							key={item.id}
 							onClick={() => {
-								setPage(item.name);
+								setPage(item.name)
+								console.log(item.name);
 							}}
 						>
-							<span className="header__number">{item.id}.</span> {item.name}
+							<span className="nav__item-number">{item.id}</span>.{" "}
+							<span className="nav__item-text">{item.name}</span>
 						</div>
 					))}
 				</nav>
-				<Button>Resume</Button>
+				<Button linkType>Resume</Button>
 			</div>
 		</div>
 	);

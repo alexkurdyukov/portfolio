@@ -15,7 +15,7 @@ const Socials = () => {
 	return (
 		<div className="socials">
 			{socialsData.map((social, index) => (
-				<a key={index} href={social.href} className="socials__element">
+				<a target={'_blank'} key={index} href={social.href} className="socials__element">
 					{social.icon}
 				</a>
 			))}

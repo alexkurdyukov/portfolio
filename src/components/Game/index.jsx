@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Cage = () => {
-	return <div className="cage"></div>;
+	const [color, setColor] = useState();
+	return (
+		<div
+			className={`cage ${color ? "--active" : ""}`}
+			onClick={() => {
+				setColor(!color);
+			}}
+		></div>
+	);
 };
 
 const Game = () => {
-    return (
+	return (
 		<div className="grid">
 			<Cage />
 			<Cage />
