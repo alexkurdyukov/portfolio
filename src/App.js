@@ -132,6 +132,7 @@ const projectsData = [
 		githubLink: "https://github.com/alexkurdyukov/Sattelite-Images-Maket",
 	},
 ];
+
 const Projects = () => {
 	return (
 		<div className="projects projects__wrapper wrapper">
@@ -182,6 +183,21 @@ const Projects = () => {
 	);
 };
 
+const Contacts = () => {
+	return (
+		<div className="contacts">
+			<div className="contacts__wrapper wrapper">
+				<h3 className="contacts__header">Get in touch</h3>
+				<p className="contacts__description">
+					Although I’m not currently looking for any new opportunities, my inbox
+					is always open. Whether you have a question or just want to say hi,
+					I’ll try my best to get back to you!
+				</p>
+				<Button children={'Say Hello'}/>
+			</div>
+		</div>
+	);
+};
 // const SideBlock = () => {
 // 	return (
 // 		<div className="sideblock">
@@ -210,6 +226,7 @@ const App = () => {
 			{page === "intro" && <Intro />}
 			{page === "about" && <About />}
 			{page == "projects" && <Projects />}
+			{page == "contacts" && <Contacts />}
 			<Socials />
 		</div>
 	);

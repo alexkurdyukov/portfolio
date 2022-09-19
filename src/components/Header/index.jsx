@@ -8,7 +8,7 @@ const headerData = [
 	{ name: "intro", id: "01" },
 	{ name: "about", id: "02" },
 	{ name: "projects", id: "03" },
-	{ name: "contact", id: "04" },
+	{ name: "contacts", id: "04" },
 ];
 
 // const headerData = {
