@@ -6,4 +6,9 @@
 	font-size: 23px;
 	line-height: 34px;
 	padding: 5px 15px;
+	cursor: pointer;
+	transition: 0.4s all linear;
+	&:hover{
+		background-color: #fff;
+	}
 }
