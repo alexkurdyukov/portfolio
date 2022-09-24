@@ -51,6 +51,9 @@ body {
   padding: 2rem 0;
   display: flex;
   flex-grow: 1;
+  @media (max-width: 1200px){
+    padding: 2rem 5vw
+  }
   &__wrapper {
     display: flex;
     gap: 91px;
@@ -134,14 +137,23 @@ body {
 }
 
 .about {
+  padding: 5rem 0;
   display: flex;
-  flex-direction: column;
-  max-width: 1200px;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 50px 0 50px;
-  display: flex;
-  flex-grow: 0.6;
+  flex-grow: 1;
+  @media (max-width: 1300px){
+    padding: 0 5vw;
+  }
+  &__photo-container{
+    @media (max-width:900px) {
+      margin: 0 auto;
+      padding: 10px;
+    }
+  }
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   &__header-container {
     display: flex;
     gap: 20px;
@@ -206,9 +218,19 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 33px;
-    flex-wrap: wrap;
     max-width: 1300px;
+    @media (max-width: 1050px){
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       align-items: center;
+       max-width: 675px;
+    }
   }
+  @media (max-width: 1376px){
+    padding: 2rem 3vw;
+  }
+
 }
 
 .project {
@@ -250,6 +272,9 @@ body {
   display: flex;
   flex-grow: 1;
   padding: 15vh 0;
+  @media(max-width: 1350px){
+    padding: 15vh 3vw;
+  }
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -263,6 +288,10 @@ body {
     line-height: 90px;
     color: #d9d9d9;
     margin-bottom: 45px;
+    @media (max-width: 400px){
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
   }
   &__description {
     font-family: "Poppins";
@@ -294,6 +323,9 @@ body {
       justify-content: center;
       color:#112240;
       font-size: 18px;
+      @media (max-width: 900px){
+        width: 90%;
+      }
     }
   }
   &__technologies{
@@ -303,3 +335,4 @@ body {
     width: calc(100% / 7);
   }
 }
+

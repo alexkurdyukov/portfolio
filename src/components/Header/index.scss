@@ -25,7 +25,9 @@
 	&__logo-container {
 		display: flex;
 	}
+
 }
+
 .nav {
 	&__item {
 		color: #fff;
@@ -39,13 +41,45 @@
 		&-text {
 			text-transform: capitalize;
 		}
-		&:hover{
+		&:hover {
 			color: $mainColor;
 		}
 	}
 }
 
-.nav__item.--active{
-	border-bottom:  1px solid $mainColor;
+.nav__item.--active {
+	border-bottom: 1px solid $mainColor;
 	transition: 0.5s ease all;
 }
+
+.header-mobile{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 5vw;
+}
+
+.burger{
+	&__container{
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		padding: 10px;
+	}
+	.burger_top{
+		height: 2px;
+		width: 35px;
+		background-color: #fff;
+	}
+	.burger_middle{
+		height: 2px;
+		width: 35px;
+		background-color: #fff;
+	}
+	.burger_bottom{
+		height: 2px;
+		width: 35px;
+		background-color: #fff;
+	}
+}
+

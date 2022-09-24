@@ -11,25 +11,18 @@ const headerData = [
 	{ name: "contacts", id: "04" },
 ];
 
-// const headerData = {
-// 	nav: [{}, {}, {}],
-// 	link: {},
-// };
-
 const Header = ({ setPage, page }) => {
 	const [isOpen, setIsOpen] = useState(false);
-
 	// useEffect(() => {
 	// 	console.log(`Состояние ${isOpen ? `виден` : `не виден`}`);
 	// }, [isOpen]);
-
 	return (
 		<div className="header">
 			<div className="header__wrapper">
 				<div className="header__logo-container">
 					<HeaderLogo />
 				</div>
-				<nav className={`header__nav nav`}> 
+				<nav className={`header__nav nav`}>
 					{headerData.map((item) => (
 						<div
 							className={`nav__item ${item.name == page ? "--active" : ""}`}
@@ -49,4 +42,40 @@ const Header = ({ setPage, page }) => {
 	);
 };
 
-export { Header };
+const MobileMenu = (setPage, page) => {
+	return (
+		<div className="mobile-menu">
+			{headerData.map((item) => (
+				<div className="mobile-menu__element" key={item.id}>
+					<span className="mobile-menu__number">{item.id}</span>.{" "}
+					<span className="mobile-menu__text">{item.name}</span>
+				</div>
+			))}
+		</div>
+	);
+};
+
+const MobileBurger = () => {
+	return (
+		<div className="burger burger__container">
+			<div className="burger_top"></div>
+			<div className="burger_middle"></div>
+			<div className="burger_bottom"></div>
+		</div>
+	);
+};
+
+const HeaderMobile = (setPage, page) => {
+	return (
+		<div className="header-mobile">
+			<div className="header-mobile__logo">
+				<HeaderLogo />
+			</div>
+			<MobileBurger/>
+		</div>
+	);
+}
+
+export { Header, HeaderMobile };
+
+
