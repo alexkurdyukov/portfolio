@@ -17,7 +17,7 @@
 	}
 	&__button {
 		text-decoration: none;
-		color: #64ffda;
+		color: $mainColor;
 		border: 1px solid;
 		border-radius: 2px;
 		padding: 3px;
@@ -61,25 +61,88 @@
 
 .burger{
 	&__container{
+		padding: 10px;
+		transition: all linear 0.4s;
+		z-index: 2;
+	}
+	&__wrapper{
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
-		padding: 10px;
+		transition: all linear 0.5s;
 	}
-	.burger_top{
+	&_top{
 		height: 2px;
 		width: 35px;
-		background-color: #fff;
+		background-color: $mainColor;
 	}
-	.burger_middle{
+	&_middle{
 		height: 2px;
 		width: 35px;
-		background-color: #fff;
+		background-color: $mainColor;
 	}
-	.burger_bottom{
+	&_bottom{
 		height: 2px;
 		width: 35px;
-		background-color: #fff;
+		background-color: $mainColor;
 	}
 }
+
+.burger__container.--active .burger__wrapper{
+	transform: rotate(360deg);
+}
+.burger__container.--active .burger_top {
+	transform: translateY(10px) rotate(-45deg);
+	background-color: #fc0b42
+}
+.burger__container.--active .burger_middle {
+	opacity: 0;
+}
+.burger__container.--active .burger_bottom {
+	transform: translateY(-14px) rotate(45deg);
+	background-color: #fc0b42
+}
+
+// .burger__container{
+// 	&.--active .burger__wrapper{
+
+// 	}
+// }
+
+.header-mobile__menu{
+	transform: translateX(-100vw);
+	position: absolute;
+	background-color: #4C6793;
+	color: #d9d9d9;
+	padding: 35vh 20px;
+	flex-grow: 1;
+	width: 60vw;
+	height: 100vh;
+	top: 0;
+	left:0;
+	transition: all linear 0.4s;
+	z-index: 1;
+	&.--active{ 
+		transform: translateX(0vw);
+	}
+	@media (max-width:500px){
+		width: 100vw;
+	}
+}
+
+.mobile-menu{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	&__number{
+		color: $mainColor;
+	}
+	&__element{
+		padding: 15px 30px;
+		cursor: pointer;
+	}
+}
+
 

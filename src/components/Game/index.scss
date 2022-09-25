@@ -2,7 +2,7 @@
 	width: 90px;
 	height: 90px;
 	background-color: #020c1b;
-	border: 1px #64ffda solid;
+	border: 1px $mainColor solid;
 	transition: all 1s ease;
 	&.--active {
 		background-color: grey;

@@ -6,8 +6,9 @@ import secondPhoto from "./assets/images/mainPhoto2.jpg";
 import { ReactComponent as FolderImage } from "./assets/images/folder-image.svg";
 import { ReactComponent as LinkImage } from "./assets/images/link-image.svg";
 import { Socials } from "./components/Socials";
-import { Header, HeaderMobile } from "./components/Header/index";
+import { Header, HeaderMobile,  } from "./components/Header/index";
 import { useWindowWidth } from "./hooks/useWindowWidth";
+
 
 const Intro = () => {
 	return (
@@ -132,6 +133,12 @@ const Projects = () => {
 };
 
 const Contacts = () => {
+	const [isForm,setForm] = useState(false);
+	if (isForm){
+		return(
+			<div>123</div>
+		)
+	} 
 	return (
 		<div className="contacts">
 			<div className="contacts__wrapper wrapper">
@@ -141,7 +148,7 @@ const Contacts = () => {
 					is always open. Whether you have a question or just want to say hi,
 					I’ll try my best to get back to you!
 				</p>
-				<Button children={"Say Hello"} />
+				<Button>Say Hello</Button>
 			</div>
 		</div>
 	);
@@ -174,8 +181,8 @@ const Hystogramm = () => {
 					))}
 				</tr>
 				<tr className="table__technologies">
-					{skillData.map((skill) => (
-						<th className="table__technology">{skill.skillName}</th>
+					{skillData.map((skill,index) => (
+						<th key={index} className="table__technology">{skill.skillName}</th>
 					))}
 				</tr>
 			</table>
@@ -184,21 +191,15 @@ const Hystogramm = () => {
 };
 
 const App = () => {
-	const [page, setPage] = useState("projects");
+	const [page, setPage] = useState("intro");
 	const windowWidth = useWindowWidth();
 	return (
 		<div className="layout">
-			{windowWidth && windowWidth > 1100 && (
-				<Header page={page} setPage={setPage} />
-			)}
-			{windowWidth && windowWidth < 1100 && (
-				<HeaderMobile page={page} setPage={setPage} />
-			)}
-
+			<Header page={page} setPage={setPage} />
 			{page === "intro" && <Intro />}
 			{page === "about" && <About />}
-			{page == "projects" && <Projects />}
-			{page == "contacts" && <Contacts />}
+			{page === "projects" && <Projects />}
+			{page ==="contacts" && <Contacts />}
 			{windowWidth && (windowWidth > 1650) && <Socials />}
 		</div>
 	);
