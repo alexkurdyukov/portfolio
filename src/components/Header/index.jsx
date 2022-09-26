@@ -4,6 +4,8 @@ import Button from "../Button";
 import { ReactComponent as HeaderLogo } from "../../assets/images/header-logo.svg";
 import { useState } from "react";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
+import { useSyncExternalStore } from "react";
+import { CSSTransition } from "react-transition-group";
 
 const headerData = [
 	{ name: "intro", id: "01" },
@@ -32,21 +34,36 @@ const HeaderDesktop = ({ page, setPage }) => {
 					</div>
 				))}
 			</nav>
-			<Button linkType>Resume</Button>
+			<Button linkType>
+				Resume
+			</Button>
 		</>
 	);
 };
 
 const HeaderMobile = ({ setPage, page }) => {
+	const windowWidth = useWindowWidth();
 	const [isOpen, setOpen] = useState(false);
+	const [overlayIsOpen, setOverlayOpen] = useState(false);
 	return (
 		<>
+			{windowWidth > 500 && overlayIsOpen && (
+				<div
+					className="overlay"
+					onClick={() => {
+						setOverlayOpen(false);
+						setOpen(false);
+					}}
+				></div>
+			)}
 			<div className={`header-mobile__menu ${isOpen ? "--active" : ""}`}>
 				<div className="mobile-menu">
 					{headerData.map((item) => (
 						<div
 							onClick={() => {
 								setPage(item.name);
+								setOpen(!isOpen);
+								setOverlayOpen(!overlayIsOpen);
 							}}
 							className="mobile-menu__element"
 							key={item.id}
@@ -61,7 +78,10 @@ const HeaderMobile = ({ setPage, page }) => {
 				<HeaderLogo />
 			</div>
 			<div
-				onClick={() => setOpen(!isOpen)}
+				onClick={() => {
+					setOpen(!isOpen);
+					setOverlayOpen(!overlayIsOpen);
+				}}
 				className={`burger burger__container ${isOpen ? "--active" : ""}`}
 			>
 				<div className="burger__wrapper">

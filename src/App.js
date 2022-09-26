@@ -6,9 +6,8 @@ import secondPhoto from "./assets/images/mainPhoto2.jpg";
 import { ReactComponent as FolderImage } from "./assets/images/folder-image.svg";
 import { ReactComponent as LinkImage } from "./assets/images/link-image.svg";
 import { Socials } from "./components/Socials";
-import { Header, HeaderMobile,  } from "./components/Header/index";
+import { Header, HeaderMobile } from "./components/Header/index";
 import { useWindowWidth } from "./hooks/useWindowWidth";
-
 
 const Intro = () => {
 	return (
@@ -29,7 +28,12 @@ const Intro = () => {
 						every place I go. I'm the happiest when I am creating, learning,
 						exploring and thinking on how to make things better.
 					</p>
-					<Button className="intro__button">Say Hello</Button>
+					<Button
+						className="intro__button"
+						onClick={() => console.log("sdfopasb")}
+					>
+						Say Hello
+					</Button>
 				</div>
 				<Game />
 			</div>
@@ -38,7 +42,7 @@ const Intro = () => {
 };
 
 const About = () => {
-  const windowWidth = useWindowWidth();
+	const windowWidth = useWindowWidth();
 	return (
 		<div className="about">
 			<div className="about__wrapper wrapper">
@@ -46,7 +50,11 @@ const About = () => {
 					<h2 className="about__header">About me</h2>
 					<div className="about__stripe"></div>
 				</div>
-        <div className="about__photo-container">{windowWidth && windowWidth<=900 && <img src={secondPhoto} className="about__photo"></img>}</div>
+				<div className="about__photo-container">
+					{windowWidth && windowWidth <= 900 && (
+						<img src={secondPhoto} className="about__photo"></img>
+					)}
+				</div>
 				<div className="about__container">
 					<div className="about__content">
 						<div className="about__content-element">
@@ -63,10 +71,12 @@ const About = () => {
 						{windowWidth && windowWidth > 1300 && <Hystogramm />}
 					</div>
 					<div className="about__photo-container">
-						{windowWidth && windowWidth>900 && <img src={secondPhoto} className="about__photo"></img>}
+						{windowWidth && windowWidth > 900 && (
+							<img src={secondPhoto} className="about__photo"></img>
+						)}
 					</div>
-        </div>
-        {windowWidth && windowWidth < 1300 && <Hystogramm />}
+				</div>
+				{windowWidth && windowWidth < 1300 && <Hystogramm />}
 			</div>
 		</div>
 	);
@@ -133,12 +143,65 @@ const Projects = () => {
 };
 
 const Contacts = () => {
-	const [isForm,setForm] = useState(false);
-	if (isForm){
-		return(
-			<div>123</div>
-		)
-	} 
+	const [isForm, setForm] = useState(false);
+	if (isForm) {
+		return (
+			<div class="form">
+				<div class="title">Hello</div>
+				<div class="subtitle">Get in touch</div>
+				<div class="input-container ic1">
+					<input id="firstname" class="input" type="text" placeholder=" " />
+					<div class="cut"></div>
+					<label for="firstname" class="placeholder">
+						First name
+					</label>
+				</div>
+				<div class="input-container ic2">
+					<input id="lastname" class="input" type="text" placeholder=" " />
+					<div class="cut"></div>
+					<label for="lastname" class="placeholder">
+						Last name
+					</label>
+				</div>
+				<div class="input-container ic2">
+					<input id="email" class="input" type="text" placeholder=" " />
+					<div class="cut cut-short"></div>
+					<label for="email" class="placeholder">
+						Email
+					</label>
+				</div>
+				<div class="input-container ic2">
+					<input id="firstname" class="input" type="text" placeholder=" " />
+					<div class="cut"></div>
+					<label for="firstname" class="placeholder">
+						Tel
+					</label>
+				</div>
+				<button type="text" class="submit">
+					submit
+				</button>
+			</div>
+			// <form className="form">
+			// 	<div className="form__wrapper wrapper">
+			// 		<div className="input__wrapper wrapper">
+			// 			<div className="form__input-container">
+			// 				<input className="form__input" placeholder="Name" />
+			// 			</div>
+			// 			<div className="form__input-container">
+			// 				<input className="form__input" placeholder="Last name" />
+			// 			</div>
+			// 			<div className="form__input-container">
+			// 				<input className="form__input" placeholder="Email" />
+			// 			</div>
+			// 			<div className="form__input-container">
+			// 				<input className="form__input" placeholder="Number" />
+			// 			</div>
+			// 		</div>
+			// 		<textarea className="form__area" placeholder="Message"></textarea>
+			// 	</div>
+			// </form>
+		);
+	}
 	return (
 		<div className="contacts">
 			<div className="contacts__wrapper wrapper">
@@ -148,7 +211,13 @@ const Contacts = () => {
 					is always open. Whether you have a question or just want to say hi,
 					I’ll try my best to get back to you!
 				</p>
-				<Button>Say Hello</Button>
+				<Button
+					onClick={() => {
+						setForm(!isForm);
+					}}
+				>
+					Say Hello
+				</Button>
 			</div>
 		</div>
 	);
@@ -181,8 +250,10 @@ const Hystogramm = () => {
 					))}
 				</tr>
 				<tr className="table__technologies">
-					{skillData.map((skill,index) => (
-						<th key={index} className="table__technology">{skill.skillName}</th>
+					{skillData.map((skill, index) => (
+						<th key={index} className="table__technology">
+							{skill.skillName}
+						</th>
 					))}
 				</tr>
 			</table>
@@ -196,11 +267,16 @@ const App = () => {
 	return (
 		<div className="layout">
 			<Header page={page} setPage={setPage} />
+
 			{page === "intro" && <Intro />}
+
 			{page === "about" && <About />}
+
 			{page === "projects" && <Projects />}
-			{page ==="contacts" && <Contacts />}
-			{windowWidth && (windowWidth > 1650) && <Socials />}
+
+			{page === "contacts" && <Contacts />}
+
+			{windowWidth && windowWidth > 1650 && <Socials />}
 		</div>
 	);
 };

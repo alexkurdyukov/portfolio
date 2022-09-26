@@ -1,7 +1,7 @@
 .header {
 	padding: 35px 0px;
 	&__wrapper {
-		width: 92%;
+		width: 88%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -25,7 +25,6 @@
 	&__logo-container {
 		display: flex;
 	}
-
 }
 
 .nav {
@@ -52,55 +51,55 @@
 	transition: 0.5s ease all;
 }
 
-.header-mobile{
+.header-mobile {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 20px 5vw;
 }
 
-.burger{
-	&__container{
+.burger {
+	&__container {
 		padding: 10px;
 		transition: all linear 0.4s;
 		z-index: 2;
 	}
-	&__wrapper{
+	&__wrapper {
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
 		transition: all linear 0.5s;
 	}
-	&_top{
+	&_top {
 		height: 2px;
 		width: 35px;
 		background-color: $mainColor;
 	}
-	&_middle{
+	&_middle {
 		height: 2px;
 		width: 35px;
 		background-color: $mainColor;
 	}
-	&_bottom{
+	&_bottom {
 		height: 2px;
 		width: 35px;
 		background-color: $mainColor;
 	}
 }
 
-.burger__container.--active .burger__wrapper{
+.burger__container.--active .burger__wrapper {
 	transform: rotate(360deg);
 }
 .burger__container.--active .burger_top {
 	transform: translateY(10px) rotate(-45deg);
-	background-color: #fc0b42
+	background-color: #fc0b42;
 }
 .burger__container.--active .burger_middle {
 	opacity: 0;
 }
 .burger__container.--active .burger_bottom {
 	transform: translateY(-14px) rotate(45deg);
-	background-color: #fc0b42
+	background-color: #fc0b42;
 }
 
 // .burger__container{
@@ -109,40 +108,48 @@
 // 	}
 // }
 
-.header-mobile__menu{
+.header-mobile__menu {
 	transform: translateX(-100vw);
 	position: absolute;
-	background-color: #4C6793;
+	background-color: #4c6793;
 	color: #d9d9d9;
 	padding: 35vh 20px;
 	flex-grow: 1;
 	width: 60vw;
 	height: 100vh;
 	top: 0;
-	left:0;
+	left: 0;
 	transition: all linear 0.4s;
 	z-index: 1;
-	&.--active{ 
+	&.--active {
 		transform: translateX(0vw);
 	}
-	@media (max-width:500px){
+	@media (max-width: 500px) {
 		width: 100vw;
 	}
 }
 
-.mobile-menu{
+.mobile-menu {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	gap: 20px;
-	&__number{
+	&__number {
 		color: $mainColor;
 	}
-	&__element{
+	&__element {
 		padding: 15px 30px;
 		cursor: pointer;
 	}
 }
 
-
+.overlay {
+	position: absolute;
+	z-index: 1;
+	background-color: #eeeeee;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+}

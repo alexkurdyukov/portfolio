@@ -1,14 +1,15 @@
 import React from "react";
 
-const Button = ({ className, children, linkType }) => {
+const Button = ({ className, children, linkType, onClick }) => {
 	return (
 		<>
 			{linkType ? (
-				<a className={`button ${className ? className : ""}`}>
-					{children}
-				</a>
+				<a className={`button ${className ? className : ""}`}>{children}</a>
 			) : (
-				<button className={`button ${className ? className : ""}`}>
+				<button
+					onClick={onClick}
+					className={`button ${className ? className : ""}`}
+				>
 					{children}
 				</button>
 			)}
