@@ -146,60 +146,44 @@ const Contacts = () => {
 	const [isForm, setForm] = useState(false);
 	if (isForm) {
 		return (
-			<div class="form">
-				<div class="title">Hello</div>
-				<div class="subtitle">Get in touch</div>
-				<div class="input-container ic1">
-					<input id="firstname" class="input" type="text" placeholder=" " />
-					<div class="cut"></div>
-					<label for="firstname" class="placeholder">
-						First name
-					</label>
-				</div>
-				<div class="input-container ic2">
-					<input id="lastname" class="input" type="text" placeholder=" " />
-					<div class="cut"></div>
-					<label for="lastname" class="placeholder">
-						Last name
-					</label>
-				</div>
-				<div class="input-container ic2">
-					<input id="email" class="input" type="text" placeholder=" " />
-					<div class="cut cut-short"></div>
-					<label for="email" class="placeholder">
-						Email
-					</label>
-				</div>
-				<div class="input-container ic2">
-					<input id="firstname" class="input" type="text" placeholder=" " />
-					<div class="cut"></div>
-					<label for="firstname" class="placeholder">
-						Tel
-					</label>
-				</div>
-				<button type="text" class="submit">
-					submit
-				</button>
+			<div class="login-box">
+				<h2>Contact me</h2>
+				<form>
+					<div class="user-box">
+						<input type="text" name="" required="" />
+						<label>Name</label>
+					</div>
+					<div class="user-box">
+						<input type="text" name="" required="" />
+						<label>Last name</label>
+					</div>
+					<div class="user-box">
+						<input type="tel" name="" required="" />
+						<label>Telephone</label>
+					</div>
+					<div class="user-box">
+						<input type="mail" name="" required="" />
+						<label>E-mail</label>
+					</div>
+					<textarea className="form__textarea"></textarea>
+					<div className="form__buttons">
+						<a href="#">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							Submit
+						</a>
+						<a href="#" >
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							Back
+						</a>
+					</div>
+				</form>
 			</div>
-			// <form className="form">
-			// 	<div className="form__wrapper wrapper">
-			// 		<div className="input__wrapper wrapper">
-			// 			<div className="form__input-container">
-			// 				<input className="form__input" placeholder="Name" />
-			// 			</div>
-			// 			<div className="form__input-container">
-			// 				<input className="form__input" placeholder="Last name" />
-			// 			</div>
-			// 			<div className="form__input-container">
-			// 				<input className="form__input" placeholder="Email" />
-			// 			</div>
-			// 			<div className="form__input-container">
-			// 				<input className="form__input" placeholder="Number" />
-			// 			</div>
-			// 		</div>
-			// 		<textarea className="form__area" placeholder="Message"></textarea>
-			// 	</div>
-			// </form>
 		);
 	}
 	return (
