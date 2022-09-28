@@ -8,6 +8,7 @@ import { ReactComponent as LinkImage } from "./assets/images/link-image.svg";
 import { Socials } from "./components/Socials";
 import { Header, HeaderMobile } from "./components/Header/index";
 import { useWindowWidth } from "./hooks/useWindowWidth";
+import { useForm } from "react-hook-form";
 
 const Intro = () => {
 	return (
@@ -144,45 +145,70 @@ const Projects = () => {
 
 const Contacts = () => {
 	const [isForm, setForm] = useState(false);
+	const {
+		register,
+		formState: { errors },
+		handleSubmit,
+	} = useForm();
+	const onSubmit = (data) => {
+		alert(JSON.stringify(data));
+	};
 	if (isForm) {
 		return (
-			<div class="login-box">
-				<h2>Contact me</h2>
-				<form>
-					<div class="user-box">
-						<input type="text" name="" required="" />
-						<label>Name</label>
+			<div className="form" onSubmit={handleSubmit(onSubmit)}>
+				<div className="form__wrapper wrapper">
+					<div class="input-container">
+						<h2>Contact me</h2>
+						<form>
+							<div class="input__element">
+								<input
+									{...register("firstName", {
+										required: "error!field is required",
+									})}
+									type="text"
+									name=""
+									required=""
+								/>
+								<label>Name</label>
+								<div className=""></div>
+							</div>
+							<div class="input__element">
+								<input type="text" name="" required="" />
+								<label className="input__label">Last name</label>
+							</div>
+							<div class="input__element">
+								<input type="tel" name="" required="" />
+								<label className="input__label">Telephone</label>
+							</div>
+							<div class="input__element">
+								<input type="mail" name="" required="" />
+								<label className="input__label">E-mail</label>
+							</div>
+							<textarea className="form__textarea"></textarea>
+							<div className="form__buttons">
+								<div className="button__sub form__button">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									<input  type="submit" value={"Submit"} />
+								</div>
+								<div
+									className="button__back form__button"
+									onClick={() => {
+										setForm(!isForm);
+									}}
+								>
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									Back
+								</div>
+							</div>
+						</form>
 					</div>
-					<div class="user-box">
-						<input type="text" name="" required="" />
-						<label>Last name</label>
-					</div>
-					<div class="user-box">
-						<input type="tel" name="" required="" />
-						<label>Telephone</label>
-					</div>
-					<div class="user-box">
-						<input type="mail" name="" required="" />
-						<label>E-mail</label>
-					</div>
-					<textarea className="form__textarea"></textarea>
-					<div className="form__buttons">
-						<a href="#">
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-							Submit
-						</a>
-						<a href="#" >
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-							Back
-						</a>
-					</div>
-				</form>
+				</div>
 			</div>
 		);
 	}
