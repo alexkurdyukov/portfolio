@@ -155,13 +155,13 @@ const Contacts = () => {
 	};
 	if (isForm) {
 		return (
-			<div className="form" onSubmit={handleSubmit(onSubmit)}>
-				<div className="form__wrapper wrapper">
-					<div class="input-container">
-						<h2>Contact me</h2>
-						<form>
-							<div class="input__element">
-								<input
+			<div className="contact" onSubmit={handleSubmit(onSubmit)}>
+				<div className="contact__wrapper wrapper">
+					<div className="input-container">
+						<h2  className="input__header">Contact me</h2>
+						<form className="input__wrapper">
+							<div class="form__element">
+								<input className="form__input"
 									{...register("firstName", {
 										required: "error!field is required",
 									})}
@@ -169,31 +169,34 @@ const Contacts = () => {
 									name=""
 									required=""
 								/>
-								<label>Name</label>
-								<div className=""></div>
+								<label className="form__label">Name</label>
+								<div className="form__error">{errors?.firstName && <p>Error! This field is required!</p>}</div>
 							</div>
-							<div class="input__element">
-								<input type="text" name="" required="" />
-								<label className="input__label">Last name</label>
+							<div class="form__element">
+								<input className="form__input"  type="text" name="" required="" />
+								<label className="form__label">Last name</label>
+								<div className="form__error"></div>
 							</div>
-							<div class="input__element">
-								<input type="tel" name="" required="" />
-								<label className="input__label">Telephone</label>
+							<div class="form__element">
+								<input className="form__input" type="tel" name="" required="" />
+								<label className="form__label">Telephone</label>
+								<div className="form__error"></div>
 							</div>
-							<div class="input__element">
-								<input type="mail" name="" required="" />
-								<label className="input__label">E-mail</label>
+							<div class="form__element">
+								<input className="form__input" type="mail" name="" required="" />
+								<label className="form__label">E-mail</label>
+								<div className="form__error"></div>
 							</div>
 							<textarea className="form__textarea"></textarea>
 							<div className="form__buttons">
-								<div className="button__sub form__button">
+								<button className="button__sub form__button">
 									<span></span>
 									<span></span>
 									<span></span>
 									<span></span>
 									<input  type="submit" value={"Submit"} />
-								</div>
-								<div
+								</button>
+								<button
 									className="button__back form__button"
 									onClick={() => {
 										setForm(!isForm);
@@ -204,7 +207,7 @@ const Contacts = () => {
 									<span></span>
 									<span></span>
 									Back
-								</div>
+								</button>
 							</div>
 						</form>
 					</div>

@@ -348,7 +348,6 @@ textarea {
 .input-container {
 	top: 50%;
 	left: 50%;
-	width: 400px;
 	padding: 40px;
 	background: #112240;
 	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
@@ -364,22 +363,22 @@ textarea {
 	text-align: center;
 }
 
-.input-container .input__element {
+.form__element {
 	position: relative;
 }
 
-.input-container .input__element input {
+.form__input {
 	width: 100%;
 	padding: 10px 0;
 	font-size: 16px;
 	color: #fff;
-	margin-bottom: 30px;
+	// margin-bottom: 30px;
 	border: none;
 	border-bottom: 1px solid #fff;
 	outline: none;
 	background: transparent;
 }
-.input-container .input__element label {
+.form__label {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -390,8 +389,14 @@ textarea {
 	transition: 0.5s;
 }
 
-.input-container .input__element input:focus ~ label,
-.input-container .input__element input:valid ~ label {
+.form__error{
+	height: 40px;
+	color:#fc0b42;
+	font-size: 13px;
+}
+
+.input-container .form__element input:focus ~ label,
+.input-container .form__element input:valid ~ label {
 	top: -20px;
 	left: 0;
 	color: $mainColor;
@@ -512,9 +517,12 @@ textarea {
 	}
 }
 
-.form {
+.contact{
 	display: flex;
 	flex-grow: 1;
+	&__wrapper{
+		padding: 30px 0;
+	}
 }
 
 .form__textarea {
