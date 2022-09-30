@@ -79,8 +79,7 @@ const About = () => {
 						</div>
 					</div>
 				</div>
-				 <Hystogramm />
-				
+				<Hystogramm />
 			</div>
 		</div>
 	);
@@ -150,11 +149,13 @@ const Contacts = () => {
 	const [isForm, setForm] = useState(false);
 	const {
 		register,
-		formState: { errors },
+		formState: { errors, submitCount },
 		handleSubmit,
-	} = useForm();
+		watch,
+	} = useForm({mode: 'onBlur'});
+	const onSubmit = (data) => console.log("Отправлено", data);
 	return (
-		<form className="form">
+		<form className="form" onSubmit={handleSubmit(onSubmit)}>
 			<div className="form__wrapper">
 				<h2 className="form__header">Get in touch</h2>
 				<p className="form__description">
@@ -163,14 +164,32 @@ const Contacts = () => {
 					I’ll try my best to get back to you!
 				</p>
 				<div className="form__container">
-					<Input value={"Name :"} />
-					<Input value={"Secondname :"} />
-					<Input value={"Email :"} />
-					<Input value={"Phone number :"} />
+					<div className="input__container">
+						<label className="label">
+							<span className="label__text">{`First Name`}</span>
+							<input
+								{...register("firstName", { required: true, maxLength: 15 })}
+								className="input"
+							/>
+							<div className="label__error">
+								{errors.firstName && <p>Error!</p>}
+							</div>
+						</label>
+					</div>
+					<div className="input__container">
+						<label className="label">
+							<span className="label__text">{`Second Name`}</span>
+							<input {...register("secondName",{required: true, maxLength: 15})} className="input" />
+							<div className="label__error">
+								{errors.secondName && <p>Error!</p>}
+							</div>
+						</label>
+					</div>
 				</div>
 				<Textarea areaName={`Message :`} />
 				<div className="form__buttons">
 					<Button>Sumbit</Button>
+					{submitCount}
 					<Button>Reset</Button>
 				</div>
 			</div>
