@@ -6,9 +6,12 @@ import secondPhoto from "./assets/images/mainPhoto2.jpg";
 import { ReactComponent as FolderImage } from "./assets/images/folder-image.svg";
 import { ReactComponent as LinkImage } from "./assets/images/link-image.svg";
 import { Socials } from "./components/Socials";
-import { Header, HeaderMobile } from "./components/Header/index";
+import { Header } from "./components/Header/index";
 import { useWindowWidth } from "./hooks/useWindowWidth";
 import { useForm } from "react-hook-form";
+import { Hystogramm } from "./UI/Hystogramm";
+import { Input } from "./UI/Input";
+import { Textarea } from "./UI/Textarea";
 
 const Intro = () => {
 	return (
@@ -57,6 +60,11 @@ const About = () => {
 					)}
 				</div>
 				<div className="about__container">
+					<div className="about__photo-container">
+						{windowWidth && windowWidth > 900 && (
+							<img src={secondPhoto} className="about__photo"></img>
+						)}
+					</div>
 					<div className="about__content">
 						<div className="about__content-element">
 							Fast-forward to today, and I’ve had the privilege of working at an
@@ -69,15 +77,10 @@ const About = () => {
 							I also recently launched a course that covers everything you need
 							to build a web app with the Spotify API using Node and React.
 						</div>
-						{windowWidth && windowWidth > 1300 && <Hystogramm />}
-					</div>
-					<div className="about__photo-container">
-						{windowWidth && windowWidth > 900 && (
-							<img src={secondPhoto} className="about__photo"></img>
-						)}
 					</div>
 				</div>
-				{windowWidth && windowWidth < 1300 && <Hystogramm />}
+				 <Hystogramm />
+				
 			</div>
 		</div>
 	);
@@ -150,127 +153,28 @@ const Contacts = () => {
 		formState: { errors },
 		handleSubmit,
 	} = useForm();
-	const onSubmit = (data) => {
-		alert(JSON.stringify(data));
-	};
-	if (isForm) {
-		return (
-			<div className="contact" onSubmit={handleSubmit(onSubmit)}>
-				<div className="contact__wrapper wrapper">
-					<div className="input-container">
-						<h2  className="input__header">Contact me</h2>
-						<form className="input__wrapper">
-							<div class="form__element">
-								<input className="form__input"
-									{...register("firstName", {
-										required: "error!field is required",
-									})}
-									type="text"
-									name=""
-									required=""
-								/>
-								<label className="form__label">Name</label>
-								<div className="form__error">{errors?.firstName && <p>Error! This field is required!</p>}</div>
-							</div>
-							<div class="form__element">
-								<input className="form__input"  type="text" name="" required="" />
-								<label className="form__label">Last name</label>
-								<div className="form__error"></div>
-							</div>
-							<div class="form__element">
-								<input className="form__input" type="tel" name="" required="" />
-								<label className="form__label">Telephone</label>
-								<div className="form__error"></div>
-							</div>
-							<div class="form__element">
-								<input className="form__input" type="mail" name="" required="" />
-								<label className="form__label">E-mail</label>
-								<div className="form__error"></div>
-							</div>
-							<textarea className="form__textarea"></textarea>
-							<div className="form__buttons">
-								<button className="button__sub form__button">
-									<span></span>
-									<span></span>
-									<span></span>
-									<span></span>
-									<input  type="submit" value={"Submit"} />
-								</button>
-								<button
-									className="button__back form__button"
-									onClick={() => {
-										setForm(!isForm);
-									}}
-								>
-									<span></span>
-									<span></span>
-									<span></span>
-									<span></span>
-									Back
-								</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		);
-	}
 	return (
-		<div className="contacts">
-			<div className="contacts__wrapper wrapper">
-				<h3 className="contacts__header">Get in touch</h3>
-				<p className="contacts__description">
+		<form className="form">
+			<div className="form__wrapper">
+				<h2 className="form__header">Get in touch</h2>
+				<p className="form__description">
 					Although I’m not currently looking for any new opportunities, my inbox
 					is always open. Whether you have a question or just want to say hi,
 					I’ll try my best to get back to you!
 				</p>
-				<Button
-					onClick={() => {
-						setForm(!isForm);
-					}}
-				>
-					Say Hello
-				</Button>
+				<div className="form__container">
+					<Input value={"Name :"} />
+					<Input value={"Secondname :"} />
+					<Input value={"Email :"} />
+					<Input value={"Phone number :"} />
+				</div>
+				<Textarea areaName={`Message :`} />
+				<div className="form__buttons">
+					<Button>Sumbit</Button>
+					<Button>Reset</Button>
+				</div>
 			</div>
-		</div>
-	);
-};
-
-const skillData = [
-	{ skillName: "HTML", skillPercent: "90%" },
-	{ skillName: "CSS", skillPercent: "85%" },
-	{ skillName: "Figma", skillPercent: "85%" },
-	{ skillName: "JS", skillPercent: "65%" },
-	{ skillName: "React", skillPercent: "35%" },
-	{ skillName: "TS", skillPercent: "25%" },
-	{ skillName: "Redux", skillPercent: "20%" },
-];
-
-const Hystogramm = () => {
-	return (
-		<div>
-			<table className="table">
-				<tr className="table__legend">
-					{skillData.map((skill, index) => (
-						<td key={index} className="table__cell">
-							<div
-								style={{ maxHeight: skill.skillPercent }}
-								className="table__cell-progress"
-							>
-								{skill.skillPercent}
-							</div>
-						</td>
-					))}
-				</tr>
-				<tr className="table__technologies">
-					{skillData.map((skill, index) => (
-						<th key={index} className="table__technology">
-							{skill.skillName}
-						</th>
-					))}
-				</tr>
-			</table>
-		</div>
+		</form>
 	);
 };
 

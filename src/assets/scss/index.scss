@@ -206,7 +206,7 @@ body {
 }
 
 .about__photo-container img {
-	width: 250px;
+	width: 300px;
 	height: 300px;
 }
 
@@ -340,200 +340,51 @@ body {
 	}
 }
 
-input,
-textarea {
-	all: unset;
-}
-
-.input-container {
-	top: 50%;
-	left: 50%;
-	padding: 40px;
-	background: #112240;
-	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-	border-radius: 10px;
-	display: flex;
-	flex-direction: column;
-}
-
-.input-container h2 {
-	margin: 0 0 30px;
-	padding: 0;
-	color: #fff;
-	text-align: center;
-}
-
-.form__element {
-	position: relative;
-}
-
-.form__input {
-	width: 100%;
-	padding: 10px 0;
-	font-size: 16px;
-	color: #fff;
-	// margin-bottom: 30px;
-	border: none;
-	border-bottom: 1px solid #fff;
-	outline: none;
-	background: transparent;
-}
-.form__label {
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding: 10px 0;
-	font-size: 16px;
-	color: #fff;
-	pointer-events: none;
-	transition: 0.5s;
-}
-
-.form__error{
-	height: 40px;
-	color:#fc0b42;
-	font-size: 13px;
-}
-
-.input-container .form__element input:focus ~ label,
-.input-container .form__element input:valid ~ label {
-	top: -20px;
-	left: 0;
-	color: $mainColor;
-	font-size: 12px;
-}
-
-.input-container form .form__button {
-	position: relative;
-	display: inline-block;
-	padding: 10px 20px;
-	color: #03e9f4;
-	font-size: 16px;
-	text-decoration: none;
-	text-transform: uppercase;
-	overflow: hidden;
-	transition: 0.5s;
-	margin-top: 40px;
-	letter-spacing: 4px;
-}
-
-.button__sub:hover {
-	background: $mainColor;
-	color: #112240;
-	border-radius: 5px;
-	box-shadow: 0 0 5px $mainColor, 0 0 25px $mainColor, 0 0 50px $mainColor,
-		0 0 100px $mainColor;
-}
-
-.button__back:hover {
-	background: #fc0b42;
-	color: #fff;
-	border-radius: 5px;
-	box-shadow: 0 0 5px #fc0b42, 0 0 25px #fc0b42, 0 0 50px #fc0b42,
-		0 0 100px #fc0b42;
-} 
-
-.input-container .form__button span {
-	position: absolute;
-	display: block;
-}
-
-.input-container .form__button span:nth-child(1) {
-	top: 0;
-	left: -100%;
-	width: 100%;
-	height: 2px;
-	background: linear-gradient(90deg, transparent, $mainColor);
-	animation: btn-anim1 1s linear infinite;
-}
-
-@keyframes btn-anim1 {
-	0% {
-		left: -100%;
+.form {
+	font-family: "Poppins", sans-serif;
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(100px, 1fr));
+		column-gap: 40px;
+		row-gap: 10px;
+		width: 100%;
+		margin-bottom: 10px;
 	}
-	50%,
-	100% {
-		left: 100%;
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto;
+		max-width: 750px;
+		background: $bgColor;
+		padding: 0 30px;
 	}
-}
-
-.input-container .form__button span:nth-child(2) {
-	top: -100%;
-	right: 0;
-	width: 2px;
-	height: 100%;
-	background: linear-gradient(180deg, transparent, $mainColor);
-	animation: btn-anim2 1s linear infinite;
-	animation-delay: 0.25s;
-}
-
-@keyframes btn-anim2 {
-	0% {
-		top: -100%;
+	&__header {
+		font-weight: 700;
+		font-size: 60px;
+		line-height: 90px;
+		display: flex;
+		align-items: center;
+		color: #d9d9d9;
+		margin-bottom: 20px;
 	}
-	50%,
-	100% {
-		top: 100%;
+	&__button {
+		border: 1px solid #fff;
+		color: #fff;
 	}
-}
-
-.input-container .form__button span:nth-child(3) {
-	bottom: 0;
-	right: -100%;
-	width: 100%;
-	height: 2px;
-	background: linear-gradient(270deg, transparent, $mainColor);
-	animation: btn-anim3 1s linear infinite;
-	animation-delay: 0.5s;
-}
-
-@keyframes btn-anim3 {
-	0% {
-		right: -100%;
+	&__buttons {
+		display: flex;
+		justify-content: space-evenly;
+		gap: 50px;
+		width: 100%;
 	}
-	50%,
-	100% {
-		right: 100%;
+	&__description {
+		font-weight: 400;
+		font-size: 23px;
+		line-height: 34px;
+		color: #a8b2d1;
+		margin-bottom: 40px;
+		text-align: center;
 	}
-}
-
-.input-container .form__button span:nth-child(4) {
-	bottom: -100%;
-	left: 0;
-	width: 2px;
-	height: 100%;
-	background: linear-gradient(360deg, transparent, $mainColor);
-	animation: btn-anim4 1s linear infinite;
-	animation-delay: 0.75s;
-}
-
-@keyframes btn-anim4 {
-	0% {
-		bottom: -100%;
-	}
-	50%,
-	100% {
-		bottom: 100%;
-	}
-}
-
-.contact{
-	display: flex;
-	flex-grow: 1;
-	&__wrapper{
-		padding: 30px 0;
-	}
-}
-
-.form__textarea {
-	border: #fff 1px solid;
-	border-radius: 5px;
-	padding: 20px 0 5px 10px;
-	width: 100%;
-	height: 50px;
-}
-
-.form__buttons {
-	display: flex;
-	justify-content: space-between;
 }

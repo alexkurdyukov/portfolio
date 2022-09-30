@@ -1,0 +1,25 @@
+.textarea{
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    &__field{
+        background-color: inherit;
+        width: 100%;
+        height: 200px;
+        border: 1px solid #a8b2d1;
+        padding: 10px 15px;
+        // border-radius: 10px;
+        cursor: pointer;
+        outline: none;
+        color: $mainColor;
+        font-size: 20px;
+    }
+    &__name{
+       color: #d9d9d9;
+       font-size: 15px;
+    }
+} 
