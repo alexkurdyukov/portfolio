@@ -152,7 +152,7 @@ const Contacts = () => {
 		formState: { errors, submitCount },
 		handleSubmit,
 		watch,
-	} = useForm({mode: 'onBlur'});
+	} = useForm({mode: 'onChange'});
 	const onSubmit = (data) => console.log("Отправлено", data);
 	return (
 		<form className="form" onSubmit={handleSubmit(onSubmit)}>
@@ -165,7 +165,8 @@ const Contacts = () => {
 				</p>
 				<div className="form__container">
 					<div className="input__container">
-						<label className="label">
+						<Input value='First name' name={`firstName`} errors = {errors} register={register}/>
+						{/* <label className="label">
 							<span className="label__text">{`First Name`}</span>
 							<input
 								{...register("firstName", { required: true, maxLength: 15 })}
@@ -176,10 +177,11 @@ const Contacts = () => {
 								<div className="errors__icon"></div>
 								<span className="errors__text"></span>Error!
 							</div>}
-						</label>
+						</label> */}
 					</div>
 					<div className="input__container">
-						<label className="label">
+						<Input value='Second name' name={`secondName`} errors = {errors} register={register}/>
+						{/* <label className="label">
 							<span className="label__text">{`Second Name`}</span>
 							<input {...register("secondName",{required: true, maxLength: 15})} className="input" />
 							{errors.secondName && 
@@ -187,7 +189,7 @@ const Contacts = () => {
 								<div className="errors__icon"></div>
 								<span className="errors__text"></span>Error!
 							</div>}
-						</label>
+						</label> */}
 					</div>
 				</div>
 				<Textarea areaName={`Message :`} />
