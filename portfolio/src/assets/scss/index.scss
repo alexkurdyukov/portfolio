@@ -388,3 +388,14 @@ body {
 		text-align: center;
 	}
 }
+
+.errors{
+	display: flex;
+	gap: 5px;
+	&__icon{
+	}
+	&__text{
+		color: red;
+		font-size: 25px;
+	}
+}

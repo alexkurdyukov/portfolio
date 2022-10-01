@@ -171,26 +171,30 @@ const Contacts = () => {
 								{...register("firstName", { required: true, maxLength: 15 })}
 								className="input"
 							/>
-							<div className="label__error">
-								{errors.firstName && <p>Error!</p>}
-							</div>
+								{errors.firstName && 
+							<div className="errors">
+								<div className="errors__icon"></div>
+								<span className="errors__text"></span>Error!
+							</div>}
 						</label>
 					</div>
 					<div className="input__container">
 						<label className="label">
 							<span className="label__text">{`Second Name`}</span>
 							<input {...register("secondName",{required: true, maxLength: 15})} className="input" />
-							<div className="label__error">
-								{errors.secondName && <p>Error!</p>}
-							</div>
+							{errors.secondName && 
+							<div className="errors">
+								<div className="errors__icon"></div>
+								<span className="errors__text"></span>Error!
+							</div>}
 						</label>
 					</div>
 				</div>
 				<Textarea areaName={`Message :`} />
 				<div className="form__buttons">
-					<Button>Sumbit</Button>
-					{submitCount}
-					<Button>Reset</Button>
+					<Button type={`submit`}>Sumbit</Button>
+					
+					<Button type={'reset'}>Reset</Button>
 				</div>
 			</div>
 		</form>
