@@ -2,20 +2,30 @@
 	width: 90px;
 	height: 90px;
 	background-color: #020c1b;
-	border: 1px $mainColor solid;
+	border: 1px grey solid;
 	transition: all 1s ease;
 	&.--active {
 		background-color: grey;
 	}
 }
 
-.grid {
+.game{
 	display: flex;
-	flex-wrap: wrap;
-	gap: 20px;
-	max-width: 320px;
-	max-height: 320px;
+	flex-direction: column;
+	border: 1px grey solid;
+	background-color: #112240;
+	padding: 20px 10px;
+}
+.grid {
+	display:grid;
+	grid-template-columns: repeat(3,1fr);
+	gap: 10px;
 	@media (max-width: 1200px){
 		display: none
 	}
+	margin-bottom: 50px;
+}
+.buttons{
+	display: flex;
+	justify-content: space-between;
 }

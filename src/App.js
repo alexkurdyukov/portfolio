@@ -13,7 +13,7 @@ import { Hystogramm } from "./UI/Hystogramm";
 import { Input } from "./UI/Input";
 import { Textarea } from "./UI/Textarea";
 
-const Intro = () => {
+const Intro = (page, setPage) => {
   return (
     <div className="intro">
       <div className="intro__wrapper wrapper">
@@ -34,8 +34,8 @@ const Intro = () => {
           </p>
           <Button
             className="intro__button"
-            onClick={() => console.log("sdfopasb")}
-          >
+            onClick={() => {setPage('contacts')}}
+          > 
             Say Hello
           </Button>
         </div>
@@ -146,15 +146,16 @@ const Projects = () => {
 };
 
 const Contacts = () => {
-  const [isForm, setForm] = useState(false);
+  
+  const [isButtonDisabled, setButtonDisabled] = useState(true);
   const {
     register,
-    formState: { errors, submitCount },
+    formState: { errors,  isValid },
     handleSubmit,
+    reset,
     watch,
   } = useForm({ mode: "onChange" });
   const onSubmit = (data) => console.log("Отправлено", data);
-  
   return (
     <form className="form" onSubmit={handleSubmit(onSubmit)}>
       <div className="form__wrapper">
@@ -170,7 +171,7 @@ const Contacts = () => {
             name={`firstName`}
             errors={errors}
             register={register}
-            regular= {/^[a-z ,.'-]+$/}
+            regular={/^[a-z ,.'-]+$/}
           />
           <Input
             value="Second name"
@@ -179,14 +180,14 @@ const Contacts = () => {
             register={register}
             regular={/^[a-z ,.'-]+$/}
           />
-		  <Input
+          <Input
             value="Phone number"
             name={`phoneNumber`}
             errors={errors}
             register={register}
             regular={/^[0-9]{9,12}$/}
           />
-		  <Input
+          <Input
             value="Email"
             name={`email`}
             errors={errors}
@@ -196,9 +197,22 @@ const Contacts = () => {
         </div>
         <Textarea areaName={`Message :`} />
         <div className="form__buttons">
-          <Button type={`submit`}>Sumbit</Button>
-
-          <Button type={"reset"}>Reset</Button>
+          <Button
+            type={`submit`}
+            disabled={!isValid}
+          >
+            Sumbit
+          </Button>
+ 
+          <Button
+            onClick={(el) => {
+              setButtonDisabled(!isButtonDisabled)
+              reset();
+            }}
+            type={"reset"}
+          >
+            Reset
+          </Button>
         </div>
       </div>
     </form>

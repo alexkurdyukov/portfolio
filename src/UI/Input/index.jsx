@@ -1,15 +1,9 @@
 import React from "react";
+import { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 
-/*validatio indicator*/
-// const inputData = {
-//   firstName: `([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})`,
-//   secondName: `([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})`,
-//   phoneNumber: `(^(\+)?((\d{2,3}) ?\d|\d)(([ -]?\d)|( ?(\d{2,3}) ?)){5,12}\d$)`,
-//   email: `^(.+)@(\ S+)$`,
-// };
-
 const Input = ({ value, name, errors, register, regular }) => {
+  const [isButtonRequired,setButtonRequired]=useState(false)
   return (
     <div className="input__container">
       <label className="label">
@@ -17,7 +11,7 @@ const Input = ({ value, name, errors, register, regular }) => {
         <input
           {...register(name, {
             required: true,
-            maxLength: 20,
+            maxLength: { value: 25, message: "error message" },
             pattern: {
               value: regular,
               message: "Please enter valid value",
@@ -25,12 +19,19 @@ const Input = ({ value, name, errors, register, regular }) => {
           })}
           className="input"
         />
-        {errors && errors[name] && (
+         {errors && errors[name] && (
           <div className="errors">
             <div className="errors__icon"></div>
             <span className="errors__text">
-              {errors.maxLength && <p>Max lenght is 20 symbols</p>}
-              {errors[name] && <p>Please enter the valid value</p>}
+              {errors[name] && errors[name].type === "required" && (
+                <span>This field is required</span>
+              )}
+              {errors[name] && errors[name].type === "maxLength" && (
+                <span>Max length exceeded</span>
+              )}
+              {errors[name] && errors[name].type === "pattern" && (
+                <span>Please enter valid value</span>
+              )}
             </span>
           </div>
         )}
