@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 
 /*validatio indicator*/
 // const inputData = {
@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 //   email: `^(.+)@(\ S+)$`,
 // };
 
-const Input = ({ value, name, errors, register, pattern }) => {
+const Input = ({ value, name, errors, register, regular }) => {
   return (
     <div className="input__container">
       <label className="label">
@@ -18,16 +18,20 @@ const Input = ({ value, name, errors, register, pattern }) => {
           {...register(name, {
             required: true,
             maxLength: 20,
-            pattern: { 
-				value: pattern, 
-				message: "Please enter valid value" },
+            pattern: {
+              value: regular,
+              message: "Please enter valid value",
+            },
           })}
           className="input"
         />
         {errors && errors[name] && (
           <div className="errors">
             <div className="errors__icon"></div>
-            <span className="errors__text">Error! This field is required</span>
+            <span className="errors__text">
+              {errors.maxLength && <p>Max lenght is 20 symbols</p>}
+              {errors[name] && <p>Please enter the valid value</p>}
+            </span>
           </div>
         )}
       </label>
