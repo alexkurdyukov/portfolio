@@ -34,8 +34,10 @@ const Intro = (page, setPage) => {
           </p>
           <Button
             className="intro__button"
-            onClick={() => {setPage('contacts')}}
-          > 
+            onClick={() => {
+              setPage("contacts");
+            }}
+          >
             Say Hello
           </Button>
         </div>
@@ -146,11 +148,10 @@ const Projects = () => {
 };
 
 const Contacts = () => {
-  
   const [isButtonDisabled, setButtonDisabled] = useState(true);
   const {
     register,
-    formState: { errors,  isValid },
+    formState: { errors, isValid },
     handleSubmit,
     reset,
     watch,
@@ -197,16 +198,13 @@ const Contacts = () => {
         </div>
         <Textarea areaName={`Message :`} />
         <div className="form__buttons">
-          <Button
-            type={`submit`}
-            disabled={!isValid}
-          >
+          <Button type={`submit`} disabled={!isValid}>
             Sumbit
           </Button>
- 
+
           <Button
             onClick={(el) => {
-              setButtonDisabled(!isButtonDisabled)
+              setButtonDisabled(!isButtonDisabled);
               reset();
             }}
             type={"reset"}

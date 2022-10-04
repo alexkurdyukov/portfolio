@@ -1,31 +1,96 @@
-.cage {
+.square {
 	width: 90px;
 	height: 90px;
 	background-color: #020c1b;
 	border: 1px grey solid;
 	transition: all 1s ease;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	color: $mainColor;
+	font-size: 80px;
+	font-weight: 100;
 	&.--active {
 		background-color: grey;
 	}
 }
 
 .game{
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	border: 1px grey solid;
 	background-color: #112240;
-	padding: 20px 10px;
-}
-.grid {
-	display:grid;
-	grid-template-columns: repeat(3,1fr);
-	gap: 10px;
-	@media (max-width: 1200px){
-		display: none
+	padding: 30px 20px;
+	overflow: hidden;
+	z-index: 0;
+	filter:blur(2px);
+	&__end{
+		width: 100%;
+		height: 200px;
+		background-color:#000000;
+		border: 1px solid grey;
+		z-index: 3;
+		position: absolute;
+		top: 30%;
+		left: 0;
+		&-text{
+			font-size: 35px;
+			margin: auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 	}
-	margin-bottom: 50px;
+	&__overlay{
+		position: absolute;
+		top: 0%;
+		left: 0;
+		width: 100%;
+		height:100%;
+		z-index: 2;
+		filter: opacity(0);
+	}
+	&__text{
+		margin-bottom: 20px;
+		font-size: 30px;
+		color: grey;
+	}
+	&__board {
+		display:grid;
+		grid-template-columns: repeat(3,1fr);
+		gap: 10px;
+		@media (max-width: 1200px){
+			display: none
+		}
+		margin-bottom: 20px;
+	} 
+	&__button{
+		display: flex;
+		gap: 10px;
+		justify-content:space-around;
+		align-items: center;
+		background-color: $bgColor;
+		border: 1px solid grey !important;
+		color: grey !important;
+		transition: 0.4s ease all !important;
+		&:hover{
+			border: 1px solid $mainColor !important;
+			color: $mainColor !important;
+			background-color: $bgColor !important;
+ 			.game__button-icon svg{
+				fill: white;
+			}
+		}
+		&-icon{
+			margin-top: 5px;
+		}
+		
+	}
 }
+
 .buttons{
 	display: flex;
 	justify-content: space-between;
+	align-self: center;
 }
