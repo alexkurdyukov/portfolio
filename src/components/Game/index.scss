@@ -25,87 +25,110 @@
   z-index: 1;
   animation: light 6s infinite linear;
   animation-delay: 1.5s;
-  &__blur{
-	position: absolute;
-	top:0;
-	left:0;
-	width: 100%;
-	height: 100%;
-  }
-  &__start {
-    width: 110%;
-    height: 50%;
-    background-color: #000000;
-    border: 1px solid #B961FF;
-    z-index: 3;
-    position: absolute;
-    top: 25%;
-    left: -5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    &-text {
-      font-size: 35px;
-      padding: 30px 20px;
-    }
-  }
-  &__overlay {
-    position: absolute;
-    top: 0%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-	backdrop-filter: blur(4px);
-  }
-  &__text {
-    margin-bottom: 20px;
-    font-size: 30px;
-    color: grey;
-  }
   &__board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    @media (max-width: 1200px) {
-      display: none;
-    }
     margin-bottom: 20px;
   }
-  &__button {
-    display: flex;
-    gap: 10px;
-    justify-content: space-around;
-    align-items: center;
-    background-color: $bgColor;
-    border: 1px solid #B961FF !important;
-    color: #B961FF !important;
-    transition: 0.4s ease all !important;
-    z-index: 1;
-    &:hover {
-      border: 1px solid $mainColor !important;
-      color: $mainColor !important;
-      background-color: $bgColor !important;
-      .game__button-icon svg {
-        fill: white;
-      }
-    }
-    &-icon {
-      margin-top: 5px;
-    }
+  &__resoult{
+    position: absolute;
+    top: 30%;
+    left:0;
+    font-size: 20px;
   }
 }
 
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  align-self: center;
-}
-.button__end {
-  z-index: 5;
-}
+
+
+// .game {
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   border: 1px #B961FF solid;
+//   background-color: #112240;
+//   padding: 30px 20px;
+//   z-index: 1;
+//   animation: light 6s infinite linear;
+//   animation-delay: 1.5s;
+//   &__blur{
+// 	position: absolute;
+// 	top:0;
+// 	left:0;
+// 	width: 100%;
+// 	height: 100%;
+//   }
+//   &__start {
+//     width: 110%;
+//     height: 50%;
+//     background-color: #000000;
+//     border: 1px solid #B961FF;
+//     z-index: 3;
+//     position: absolute;
+//     top: 25%;
+//     left: -5%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     &-text {
+//       font-size: 35px;
+//       padding: 30px 20px;
+//     }
+//   }
+//   &__overlay {
+//     position: absolute;
+//     top: 0%;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     z-index: 2;
+// 	backdrop-filter: blur(4px);
+//   }
+//   &__text {
+//     margin-bottom: 20px;
+//     font-size: 30px;
+//     color: grey;
+//   }
+//   &__board {
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+//     gap: 10px;
+//     margin-bottom: 20px;
+//   }
+//   &__button {
+//     display: flex;
+//     gap: 10px;
+//     justify-content: space-around;
+//     align-items: center;
+//     background-color: $bgColor;
+//     border: 1px solid #B961FF !important;
+//     color: #B961FF !important;
+//     transition: 0.4s ease all !important;
+//     z-index: 1;
+//     &:hover {
+//       border: 1px solid $mainColor !important;
+//       color: $mainColor !important;
+//       background-color: $bgColor !important;
+//       .game__button-icon svg {
+//         fill: white;
+//       }
+//     }
+//     &-icon {
+//       margin-top: 5px;
+//     }
+//   }
+// }
+
+// .buttons {
+//   display: flex;
+//   justify-content: space-between;
+//   align-self: center;
+// }
+// .button__end {
+//   z-index: 5;
+// }
 
 @keyframes light {
-    50% {box-shadow: 10px 20px 30px #B961FF;}
+    50% {box-shadow:0 0 15px 5px #B961FF;}
 }
