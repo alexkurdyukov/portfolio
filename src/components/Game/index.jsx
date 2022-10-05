@@ -35,16 +35,35 @@ const Game = () => {
     setBoard(Array(9).fill(null));
   };
   return (
-    <div className="game">
+    <div className={`game`}>
       {!isGameAvailable && (
         <>
-          <div className="game__end">
-            {winner === "O" ? (
-              <p className="game__end-text">You lose!</p>
-            ) : (
-              <p className="game__end-text">Grats!You win</p>
-            )}
-            <Button onClick={()=>{setGameAvailable(!isGameAvailable)}}>New Game</Button>
+          <div className="game__start">
+            <p className="game__start-text">Hi! Let's play now</p>
+            <Button
+              onClick={() => {
+                setGameAvailable(!isGameAvailable);
+              }}
+              className="game__button"
+            >
+              New Game
+            </Button>
+          </div>
+          <div className="game__overlay"></div>
+        </>
+      )}
+      {winner && (
+        <>
+          <div className="game__start">
+            <p className="game__start-text">Game over!Play again?</p>
+            <Button
+              onClick={() => {
+                startNewGame();
+              }}
+              className="game__button button__end"
+            >
+              New Game
+            </Button>
           </div>
           <div className="game__overlay"></div>
         </>
@@ -52,18 +71,16 @@ const Game = () => {
       <Board squares={board} click={handleClick} />
       <span className="game__text">Next player: {xIsNext ? "X" : "O"} </span>
       <div className="buttons">
-        <Button className={`game__button`}>
+        <Button
+          onClick={() => {
+            startNewGame();
+          }}
+          className={`game__button`}
+        >
           <div className="game__button-icon">
             <RestartIcon />
           </div>
-          <span
-            onClick={() => {
-              startNewGame();
-            }}
-            className="game__button-text"
-          >
-            New game
-          </span>
+          <span className="game__button-text">New game</span>
         </Button>
       </div>
     </div>

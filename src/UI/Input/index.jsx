@@ -11,7 +11,7 @@ const Input = ({ value, name, errors, register, regular }) => {
         <input
           {...register(name, {
             required: true,
-            maxLength: { value: 25, message: "error message" },
+            maxLength: { value: 35, message: "error message" },
             pattern: {
               value: regular,
               message: "Please enter valid value",
