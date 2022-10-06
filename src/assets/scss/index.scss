@@ -59,6 +59,9 @@ body {
 		gap: 91px;
 		align-items: center;
 		justify-content: space-between;
+		@media (max-width: 840px){
+			flex-direction: column;
+		}
 	}
 	&__name {
 		font-weight: 700;

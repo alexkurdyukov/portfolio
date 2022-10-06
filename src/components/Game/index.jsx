@@ -21,9 +21,32 @@ const Game = () => {
     x: "You win!",
     draw: "draw",
   };
+  const [totalGameState, setTotalGameState] = useState("start");
+  //на основании двух стэйтов будем делать проверку на багованное состояние игры - когда игрок или ии выигрывает последним ходом
+  // в таком случае будем делать проверку, если gameState ==='draw' и одновременно выиграл кто-то, то будем выводить кто выиграл
+  // если setState==='draw', но никто не выиграл, будем выдавать ничью
+  // напишем функцию stateDefinder
   const [gameState, setGameState] = useState("start");
   const [squares, setSquares] = useState(defaultSquares());
   const [winner, setWinner] = useState(null);
+  
+  const newGame = () => {
+    setSquares(defaultSquares);
+    setGameState(null)
+    setWinner(null)
+    console.log('click')
+  }
+  const stateDefinder = () => {
+    console.log(`function is working , now state is ${totalGameState}`)
+    if (!winner && gameState=='draw'){
+      setTotalGameState('draw')
+      console.log(totalGameState)
+    }
+    if ((winner === "o" || winner === "x") && gameState == "draw") {
+      setTotalGameState(winner);
+      console.log(totalGameState);
+    }
+  };
   useEffect(() => {
     const isComputerTurn =
       squares.filter((square) => square !== null).length % 2 === 1;
@@ -44,10 +67,12 @@ const Game = () => {
     if (playerWon) {
       setWinner("x");
       setGameState("win");
+      stateDefinder()
     }
     if (computerWon) {
       setWinner("o");
       setGameState("lose");
+      stateDefinder()
     }
     const putComputerAt = (index) => {
       let newSquares = squares;
@@ -105,6 +130,7 @@ const Game = () => {
     if (flag) {
       if (!gameState === "win") {
         setGameState("draw");
+        return;
       }
     }
   }, [squares]);
@@ -120,9 +146,10 @@ const Game = () => {
           />
         ))}
       </Board>
-    {gameState==='draw' && <div className="game__popup">Draw!</div>}
-    {gameState==='win' && <div className='game__popup'>You win</div>}
-    {gameState==='lose' && <div className='game__popup'>You lose</div>}
+      <div className="game__buttons">
+        <Button onClick={newGame} className={`game__button`}>New Game</Button>
+      </div>
+      {(gameState === "win" || gameState==='lose') && <div className="game__popup"><span className="game__popup-text">You {gameState}</span></div>}
     </div>
   );
 };
