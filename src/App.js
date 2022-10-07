@@ -12,17 +12,20 @@ import { useForm } from "react-hook-form";
 import { Hystogramm } from "./UI/Hystogramm";
 import { Input } from "./UI/Input";
 import { Textarea } from "./UI/Textarea";
+import TypeText from "./scripts/typpingEffect";
+import TyppingPoint from "./scripts/typingPoint";
 
 const Intro = (page, setPage) => {
+  const windowWidth = useWindowWidth();
   return (
     <div className="intro">
       <div className="intro__wrapper wrapper">
         <div className="intro__content">
-          <p className="intro__title">Hi, my name is</p>
+          <p className="intro__title">Hi, my name is<TyppingPoint/></p>
           <h1 className="intro__container">
             <span className="intro__name">Kurdyukov Alexey</span>
             <span className="intro__subtitle">
-              I create solution from coding
+              <TypeText words = {`I create solution with coding`}/>
             </span>
           </h1>
           <p className="intro__description">
@@ -41,7 +44,7 @@ const Intro = (page, setPage) => {
             Say Hello
           </Button>
         </div>
-        <Game />
+        {windowWidth && windowWidth>1200 && <Game />}
       </div>
     </div>
   );
@@ -162,12 +165,13 @@ const Contacts = () => {
       <div className="form__wrapper">
         <h2 className="form__header">Get in touch</h2>
         <p className="form__description">
-          Although I’m not currently looking for any new opportunities, my inbox
+        Although I’m not currently looking for any new opportunities, my inbox
           is always open. Whether you have a question or just want to say hi,
           I’ll try my best to get back to you!
+          
         </p>
         <div className="form__container">
-          <Input
+          <Input 
             value="First name"
             name={`firstName`}
             errors={errors}
