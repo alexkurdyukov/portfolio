@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from "react";
 import TyppingPoint from "./typingPoint";
 
-export default function TypeText({words}) {
+export default function TypeText({speed,words}) {
   const [subIndex, setSubIndex] = useState(0);
   const [blink, setBlink] = useState(true);
-  const typpingFlag = false;
+  let endIndicator = false;
+  // if (speed){ 
+  //   let typpingSpeed = speed;
+  // }
   // typeWriter
   useEffect(() => {
     if ( subIndex === words.length) {
-      typpingFlag = true;
+      endIndicator = true
       return;
     }
     const timeout = setTimeout(() => {
       setSubIndex((prev) => prev + 1);
-    }, 400);
+    }, speed);
     return () => clearTimeout(timeout);
   }, [subIndex]);
 
@@ -21,15 +24,15 @@ export default function TypeText({words}) {
   useEffect(() => {
     const timeout2 = setTimeout(() => {
       setBlink((prev) => !prev);
-    }, 400);
+    }, speed);
     return () => clearTimeout(timeout2);
   }, [blink]);
 
   return (
     <>
       <p>
-        {`${words.substring(0, subIndex)}${blink ? "|" : " "}`}
-        {/* {typpingFlag && <TyppingPoint/>} */}
+        {!endIndicator && `${words.substring(0, subIndex)}${blink ? "|" : " "}`}
+        {endIndicator && `${words.substring(0, subIndex)}`}
       </p>
     </>
   );

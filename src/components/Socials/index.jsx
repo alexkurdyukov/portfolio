@@ -5,22 +5,26 @@ import { ReactComponent as GithubIcon } from "../../assets/images/icon-github.sv
 import { ReactComponent as TelegramIcon } from "../../assets/images/icon-telegram.svg";
 
 const socialsData = [
-	{ icon: <TwitterIcon />, href: "https://investor.twitterinc.com/" },
-	{ icon: <InstagramIcon />, href: "#" },
-	{ icon: <GithubIcon />, href: "https://github.com/alexkurdyukov" },
-	{ icon: <TelegramIcon />, href: "https://t.me/wirtuoz2033/" },
+  { icon: <TwitterIcon />, href: "https://investor.twitterinc.com/" },
+  { icon: <InstagramIcon />, href: "#" },
+  { icon: <GithubIcon />, href: "https://github.com/alexkurdyukov" },
+  { icon: <TelegramIcon />, href: "https://t.me/wirtuoz2033/" },
 ];
 
 const Socials = () => {
-	return (
-		<div className="socials">
-			{socialsData.map((social, index) => (
-				<a target={'_blank'} key={index} href={social.href} className="socials__element">
-					{social.icon}
-				</a>
-			))}
-		</div>
-	);
+  return (
+    <div className="socials">
+      {socialsData.map((social, index) => (
+        <a
+          target={"_blank"}
+          key={index}
+          href={social.href}
+          className="socials__element"
+        >
+          {social.icon}
+        </a>
+      ))}
+    </div>
+  );
 };
-
 export { Socials };

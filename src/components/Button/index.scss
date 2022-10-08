@@ -9,6 +9,7 @@
 	cursor: pointer;
 	transition: 0.4s all linear;
 	&:hover{
-		background-color:#A8B2D1
+		box-shadow:0 0 15px 5px $mainColor;
+		background-color:$secondColor;
 	}
 }
