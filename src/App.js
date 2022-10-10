@@ -17,7 +17,7 @@ const App = () => {
     <div className="layout">
       <Header page={page} setPage={setPage} />
 
-      {page === "intro" && <Intro />}
+      {page === "intro" && <Intro page={page} setPage={setPage}/>}
 
       {page === "about" && <About />}
 

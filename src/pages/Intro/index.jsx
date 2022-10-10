@@ -8,7 +8,7 @@ import { useWindowWidth } from "../../hooks/useWindowWidth";
 import { Contacts } from "../Contacts";
 import { useEffect } from "react";
 
-const Intro = (page, setPage) => {
+const Intro = ({page, setPage}) => {
   const windowWidth = useWindowWidth();
   useEffect(()=>{console.log('state changes')},[page])
   return (
