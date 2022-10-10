@@ -34,7 +34,6 @@ const Game = () => {
     setSquares(defaultSquares);
     setGameState(null)
     setWinner(null)
-    console.log('click')
   }
   const stateDefinder = () => {
     console.log(`function is working , now state is ${totalGameState}`)

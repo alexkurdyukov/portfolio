@@ -7,9 +7,6 @@ import { Projects } from "../src/pages/Projects/index.jsx";
 import { Intro } from "./pages/Intro";
 import { About } from "./pages/About";
 import { Contacts } from "./pages/Contacts";
-
-import "../src/pages/Projects/index.scss";
-import '../src/pages/About/index.scss'
 import "./assets/scss/index.scss";
 
 

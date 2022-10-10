@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { ReactComponent as FolderImage } from "../../assets/images/folder-image.svg";
 import { ReactComponent as LinkImage } from "../../assets/images/link-image.svg";
 
@@ -33,15 +34,16 @@ const projectsData = [
     return (
       <div className="projects">
         <div className="projects__wrapper wrapper">
+
           {projectsData.map((project, index) => (
-            <div className="project" key={index}>
+            <div className="project" key={index} >
               <div className="project__icons icons">
-                <div className="icons__folder">
+                <a href={project.verselLink} className="icons__folder" target="_blank">
                   <FolderImage />
-                </div>
-                <div className="icons__link">
+                </a>
+                <a href={project.githubLink} className="icons__link" target="_blank">
                   <LinkImage />
-                </div>
+                </a>
               </div>
               <div className="project__content">
                 <h3 className="project__header">{project.name}</h3>

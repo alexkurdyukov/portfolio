@@ -41,7 +41,8 @@
     border: 1px solid #B961FF !important;
     animation: light 6s linear;
     &:hover{
-      background-color: $bgColor !important;
+      color: #ffffff;
+      box-shadow:0 0 15px 5px #B961FF !important;
     }
   }
   &__popup{

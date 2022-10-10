@@ -6,27 +6,28 @@ import { Input } from "../../UI/Input";
 import { Textarea } from "../../UI/Textarea";
 
 const Contacts = () => {
-    const [isButtonDisabled, setButtonDisabled] = useState(true);
-    const {
-      register,
-      formState: { errors, isValid },
-      handleSubmit,
-      reset,
-      watch,
-    } = useForm({ mode: "onChange" });
-    const onSubmit = (data) => console.log("Отправлено", data);
-    return (
+  const [isButtonDisabled, setButtonDisabled] = useState(true);
+  const [isPopupOpen, setPopupOpen] = useState(false);
+  const {
+    register,
+    formState: { errors, isValid },
+    handleSubmit,
+    reset,
+    watch,
+  } = useForm({ mode: "onChange" });
+  const onSubmit = (data) => console.log("Отправлено", data);
+  return (
+    <>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <div className="form__wrapper">
           <h2 className="form__header">Get in touch</h2>
           <p className="form__description">
-          Although I’m not currently looking for any new opportunities, my inbox
-            is always open. Whether you have a question or just want to say hi,
-            I’ll try my best to get back to you!
-            
+            Although I’m not currently looking for any new opportunities, my
+            inbox is always open. Whether you have a question or just want to
+            say hi, I’ll try my best to get back to you!
           </p>
           <div className="form__container">
-            <Input 
+            <Input
               value="First name"
               name={`firstName`}
               errors={errors}
@@ -60,7 +61,7 @@ const Contacts = () => {
             <Button type={`submit`} disabled={!isValid}>
               Sumbit
             </Button>
-  
+
             <Button
               onClick={(el) => {
                 setButtonDisabled(!isButtonDisabled);
@@ -73,6 +74,14 @@ const Contacts = () => {
           </div>
         </div>
       </form>
-    );
-  };
-  export {Contacts}
+      {isPopupOpen && 
+        <div className="form__popup">
+          <span className="form__popup-text">Thank you!!!</span>
+          <div className="form__popup-image"></div>  
+          <div className="form__popup-overlay"></div>  
+        </div>
+      }
+    </>
+  );
+};
+export { Contacts };
