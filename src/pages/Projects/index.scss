@@ -57,30 +57,57 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		width: 50vw;
+		width: 70vw;
 		height: 80vh;
 		background-color: $secondColor;
 		position: absolute;
 		top: 10%;
-		left: 25vw;
+		left: 15vw;
 		border: 1px solid #ffffff;
 		z-index: 2;
-		padding: 20px;
-		// background-image: url(../../assets/images/PortfolioPreview.png);
-		background-repeat: no-repeat;
-		background-size: 100% 100%;
-		&__header{
+		padding: 25px;
+		&__header {
 			text-align: center;
-			font-size: 40px;
+			font-size: 45px;
+			margin-bottom: 20px;
+			color: $mainColor;
+			padding: 5px;
+			border: 1px solid #ffffff;
+		}
+		&__description{
+			margin-bottom: 20px;
+			padding: 5px;
+			border: 1px solid #ffffff;
 		}
 		&__overlay {
 			position: absolute;
 			width: 100vw;
 			height: 100vh;
 			backdrop-filter: blur(2px);
-			left:0;
-			top:0;
+			left: 0;
+			top: 0;
 			z-index: 1;
+		}
+		&__preview {
+			height: 450px;
+			width: 60%;
+			margin: 0 auto;
+			margin-bottom: 20px;
+		}
+		&__content {
+			display: flex;
+			margin-top: auto;
+			gap: 25px;
+			@media (max-width: 1000px) {
+				flex-direction: column;
+			}
+			&__description {
+				max-width: 300px;
+			}
+		}
+		&__buttons{
+			display: flex;
+			gap: 20px;
 		}
 	}
 }

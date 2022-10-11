@@ -2,6 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { ReactComponent as FolderImage } from "../../assets/images/folder-image.svg";
 import { ReactComponent as LinkImage } from "../../assets/images/link-image.svg";
+import projectPreview1 from "../../assets/images/AperturePreview.png";
+import projectPreview2 from "../../assets/images/SattelitePreview.png";
+import projectPreview3 from "../../assets/images/PortfolioPreview.png";
+import Button from "../../components/Button";
 
 const projectsData = [
 	{
@@ -11,7 +15,9 @@ const projectsData = [
 			"My first project on HTML,CSS.Also adaptive layout is implemented on it",
 		verselLink: "https://aperture-studio-maket.vercel.app/",
 		githubLink: "https://github.com/alexkurdyukov/Aperture-Studio-Maket",
-		previewBackground: "../../assets/images/AperturePreview.png",
+		previewBackground: projectPreview1,
+		modaleDescription:
+			"My first project on which I used html css. I paid a lot of attention to adaptive layout without using frameworks. Adaptive layout is made using media queries, as well as flex and grid technologies. There are also simple animations",
 	},
 	{
 		name: "Sattelite Images",
@@ -20,7 +26,9 @@ const projectsData = [
 			"Second project. I first time have used JavaScript, made adaptive layout and worked with keyframes animations",
 		verselLink: "https://sattelite-images-maket.vercel.app/",
 		githubLink: "https://github.com/alexkurdyukov/Sattelite-Images-Maket",
-		previewBackground: "../../assets/images/SattelitePreview.png",
+		previewBackground: projectPreview2,
+		modaleDescription:
+			"My second project, in which I used not only html, css, but also javascript. Adaptive layout based on flex and grid technologies is implemented in the work. There are a large number of animations, as well as interesting JS features, such as a slider, interactive blocks that appear when scrolling the page, form animations, etc.",
 	},
 	{
 		name: "React Portfolio",
@@ -29,14 +37,16 @@ const projectsData = [
 			"It's my first react experiance,where i have used react states, hooks and also SCSS",
 		verselLink: "https://sattelite-images-maket.vercel.app/",
 		githubLink: "https://github.com/alexkurdyukov/Sattelite-Images-Maket",
-		previewBackground: "../../assets/images/PortfolioPreview.png",
+		previewBackground: projectPreview3,
+		modaleDescription:
+			"My third project. I tried the react library on it. In the process, I created a SPA that contains several pages between which you can switch. On this project, we managed to work with states, props, basic hooks (useEffect,useState), with form validation using reactHookForm. As a bonus, a tic-tac-toe game is written using classic hooks",
 	},
 ];
 
 const Projects = () => {
 	const [projectOpen, setProjectOpen] = useState(false);
 	const [cardIndex, setCardIndex] = useState(0);
-	const [projectState, setProjectState] = useState({})
+	const [projectState, setProjectState] = useState({});
 	return (
 		<>
 			<div className="projects">
@@ -47,7 +57,7 @@ const Projects = () => {
 							onClick={() => {
 								setProjectOpen(true);
 								setCardIndex(index);
-								setProjectState(project)
+								setProjectState(project);
 							}}
 							key={index}
 						>
@@ -88,16 +98,26 @@ const Projects = () => {
 					<div className="project-popup wrapper">
 						<div className="project-container">
 							<h3 className="project-popup__header">
-								{projectsData[cardIndex].name}
+								<span className="project-popup__header-name">name = {`{`}</span>
+								{projectState.name}
+								{`}`}
 							</h3>
-							<div
-								className="project-popup__intro"
-							></div>
+
 							<div className="project-popup__description">
-								{projectsData[cardIndex].description}
+								description = {`'`}{projectState.modaleDescription}{`'`}
+							</div>
+							<div className='project-popup__preview-container'>
+								<img
+									src={projectState.previewBackground}
+									className="project-popup__preview"
+								/>
 							</div>
 						</div>
-						<div className="project-popup__buttons"></div>
+						<div className="project-popup__technologies"></div>
+						<div className="project-popup__buttons">
+							<Button>visit gitHub</Button>
+							<Button>visit versel</Button>
+						</div>
 					</div>
 					<div
 						onClick={() => {
