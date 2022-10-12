@@ -1,11 +1,9 @@
 import React, { useRef } from "react";
-import { useEffect } from "react";
 import Button from "../Button";
 import { ReactComponent as HeaderLogo } from "../../assets/images/header-logo.svg";
 import { useState } from "react";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
-import { useSyncExternalStore } from "react";
-import { CSSTransition } from "react-transition-group";
+
 
 const headerData = [
 	{ name: "intro", id: "01" },

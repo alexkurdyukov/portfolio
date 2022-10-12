@@ -35,9 +35,11 @@
 	}
 	&__header {
 		margin-bottom: 28px;
-		font-size: 25px;
+		font-size: 35px; 
 		line-height: 38px;
 		color: #a8b2d1;
+		display: flex;
+		align-items: baseline;
 	}
 	&__description {
 		font-weight: 400;
@@ -58,26 +60,29 @@
 		justify-content: center;
 		align-items: center;
 		width: 70vw;
-		height: 80vh;
+		height: 85vh;
 		background-color: $secondColor;
 		position: absolute;
-		top: 10%;
+		top: 7%;
 		left: 15vw;
 		border: 1px solid #ffffff;
 		z-index: 2;
 		padding: 25px;
+		&__technologies{
+			display: flex;
+			margin-bottom: 20px;
+		}
 		&__header {
 			text-align: center;
-			font-size: 45px;
+			font-size: 35px;
 			margin-bottom: 20px;
-			color: $mainColor;
 			padding: 5px;
-			border: 1px solid #ffffff;
+			
 		}
 		&__description{
 			margin-bottom: 20px;
 			padding: 5px;
-			border: 1px solid #ffffff;
+			
 		}
 		&__overlay {
 			position: absolute;
@@ -90,7 +95,7 @@
 		}
 		&__preview {
 			height: 450px;
-			width: 60%;
+			width: 50%;
 			margin: 0 auto;
 			margin-bottom: 20px;
 		}
@@ -108,6 +113,22 @@
 		&__buttons{
 			display: flex;
 			gap: 20px;
+		}
+		&__button{
+			border:1px solid #ffffff;
+			color: #ffffff;
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			&:hover{
+				box-shadow:0 0 10px 5px #B961FF;
+				color: #B961FF;
+				border: 1px solid #B961FF
+			}
+		}
+		&_green{
+			color: $mainColor;
+			font-size: 20px;
 		}
 	}
 }
