@@ -21,10 +21,10 @@ const Intro = ({page, setPage}) => {
             <TyppingPoint />
           </p>
           <h1 className="intro__container">
-            <span className="intro__name">Kurdyukov Alexey</span>
-            <span className="intro__subtitle">
+            <div className="intro__name glitch">Kurdyukov Alexey</div>
+            <div className="intro__subtitle">
               <TypeText speed={400} words={`I create solution with coding`} />
-            </span>
+            </div>
           </h1>
           <p className="intro__description">
             I am very curious and a self-driven person with a big passion for

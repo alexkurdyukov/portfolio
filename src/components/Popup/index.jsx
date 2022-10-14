@@ -9,6 +9,7 @@ const Popup = (children,setProjectOpen) => {
 			<div
 				onClick={() => {
 					setProjectOpen(false);
+					scrollAvailable();
 				}}
 				className="popup__overlay"
 			></div>

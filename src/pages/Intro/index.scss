@@ -10,18 +10,11 @@
 		gap: 91px;
 		align-items: center;
 		justify-content: space-between;
-		@media (max-width: 840px){
+		@media (max-width: 840px) {
 			flex-direction: column;
 		}
 	}
-	&__name {
-		font-weight: 700;
-		font-size: 60px;
-		line-height: 90px;
-		display: flex;
-		align-items: center;
-		color: #d9d9d9;
-	}
+
 	&__subtitle {
 		font-family: "Inter";
 		font-weight: 600;
@@ -58,5 +51,62 @@
 	}
 	&__button {
 		max-width: 150px;
+	}
+}
+
+.intro__name {
+	font-weight: 700;
+	font-size: 60px;
+	line-height: 90px;
+	display: flex;
+	align-items: center;
+	color: #d9d9d9;
+}
+
+$background: $bgColor;
+$foreground: white;
+
+@mixin gitchText($offset, $text) {
+	content: $text;
+	position: absolute;
+	left: $offset;
+	top: $offset;
+	clip: rect(0, 830px, 0, 0);
+	background-color: $background;
+	color: $foreground;
+	animation: glitch 4s infinite alternate-reverse;
+	animation-delay: 4s;
+}
+
+.glitch{
+	margin-right: 20px;
+}
+
+.glitch{
+	color: $background;
+	color: $mainColor;
+	animation: fadeWhite 4s forwards;
+	animation-delay: 2s;
+	position: relative;
+	&:after {
+		@include gitchText(2px, "FrontendDeveloper");
+	}
+	&:before {
+		@include gitchText(-2px, "Coder");
+	}
+}
+
+@keyframes fadeWhite {
+	100% {
+		color: #B961FF;
+	}
+}
+
+@keyframes glitch {
+	$steps: 20;
+	@for $i from 0 through $steps {
+		#{percentage($i * (1 / $steps))} {
+			clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+		}
 	}
 }

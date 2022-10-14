@@ -99,66 +99,67 @@ const Projects = () => {
 			</div>
 			{projectOpen && (
 				<>
-					<div className="project-popup wrapper">
-						<div className="project-container">
-							<h3 className="project-popup__header">
-								<span className="project-popup__header-name">
+					<div className ='box'>
+						<div className="project-popup wrapper">
+							<div className="project-container">
+								<h3 className="project-popup__header">
+									<span className="project-popup__header-name">
+										<span className="project-popup_green">
+											const projectName{" "}
+										</span>{" "}
+										= '{projectState.name}'
+									</span>
+								</h3>
+								<div className="project-popup__description">
 									<span className="project-popup_green">
-										const projectName{" "}
-									</span>{" "}
-									= '{projectState.name}'
-								</span>
-							</h3>
-							<div className="project-popup__description">
-								<span className="project-popup_green">
-									const projectDescription ={" "}
-								</span>
-								{`'`}
-								{projectState.modaleDescription}
-								{`'`}
-							</div>
-							<div className="project-popup__preview-container">
-								<img
-									src={projectState.previewBackground}
-									className="project-popup__preview"
-								/>
-							</div>
-						</div>
-						<div className="project-popup__technologies">
-							<span className="project-popup_green">technologies</span>=[
-							{projectState.technologies.map((tech, index) => (
-								<div className="project-popup__technologies" key={index}>
-									{index == projectState.technologies.length - 1 ? (
-										<span>{tech}</span>
-									) : (
-										<span>{tech}, </span>
-									)}
+										const projectDescription ={" "}
+									</span>
+									{`'`}
+									{projectState.modaleDescription}
+									{`'`}
 								</div>
-							))}
-							]
-						</div>
-						<div className="project-popup__buttons">
-							<Button
-								href={projectState.githubLink}
-								linkType={true}
-								className={`project-popup__button`}
-							>
-								<div className="project-popup__logo">
-									<img src={gitLogo} />
+								<div className="project-popup__preview-container">
+									<img
+										src={projectState.previewBackground}
+										className="project-popup__preview"
+									/>
 								</div>
-								<span className="project-popup__link">visit gitHub</span>
-							</Button>
-							<Button
-								href={projectState.verselLink}
-								linkType={true}
-								className={`project-popup__button`}
-							>
-								<div className="project-popup__logo"><img src={verselLogo}/></div>
-								<span className="project-popup__link">visit versel</span>
-							</Button>
+							</div>
+							<div className="project-popup__technologies">
+								<span className="project-popup_green">technologies</span>=[
+								{projectState.technologies.map((tech, index) => (
+									<div className="project-popup__technologies" key={index}>
+										{index == projectState.technologies.length - 1 ? (
+											<span>{tech}</span>
+										) : (
+											<span>{tech}, </span>
+										)}
+									</div>
+								))}
+								]
+							</div>
+							<div className="project-popup__buttons">
+								<Button
+									href={projectState.githubLink}
+									linkType={true}
+									className={`project-popup__button`}
+								>
+									<div className="project-popup__logo">
+										<img src={gitLogo} />
+									</div>
+									<span className="project-popup__link">visit gitHub</span>
+								</Button>
+								<Button
+									href={projectState.verselLink}
+									linkType={true}
+									className={`project-popup__button`}
+								>
+									<div className="project-popup__logo"><img src={verselLogo}/></div>
+									<span className="project-popup__link">visit versel</span>
+								</Button>
+							</div>
 						</div>
-					</div>
-
+					</div>				
 					<div
 						onClick={() => {
 							setProjectOpen(false);
@@ -173,3 +174,75 @@ const Projects = () => {
 };
 
 export { Projects };
+
+
+
+{/* <>
+<div className="project-popup wrapper">
+	<div className="project-container">
+		<h3 className="project-popup__header">
+			<span className="project-popup__header-name">
+				<span className="project-popup_green">
+					const projectName{" "}
+				</span>{" "}
+				= '{projectState.name}'
+			</span>
+		</h3>
+		<div className="project-popup__description">
+			<span className="project-popup_green">
+				const projectDescription ={" "}
+			</span>
+			{`'`}
+			{projectState.modaleDescription}
+			{`'`}
+		</div>
+		<div className="project-popup__preview-container">
+			<img
+				src={projectState.previewBackground}
+				className="project-popup__preview"
+			/>
+		</div>
+	</div>
+	<div className="project-popup__technologies">
+		<span className="project-popup_green">technologies</span>=[
+		{projectState.technologies.map((tech, index) => (
+			<div className="project-popup__technologies" key={index}>
+				{index == projectState.technologies.length - 1 ? (
+					<span>{tech}</span>
+				) : (
+					<span>{tech}, </span>
+				)}
+			</div>
+		))}
+		]
+	</div>
+	<div className="project-popup__buttons">
+		<Button
+			href={projectState.githubLink}
+			linkType={true}
+			className={`project-popup__button`}
+		>
+			<div className="project-popup__logo">
+				<img src={gitLogo} />
+			</div>
+			<span className="project-popup__link">visit gitHub</span>
+		</Button>
+		<Button
+			href={projectState.verselLink}
+			linkType={true}
+			className={`project-popup__button`}
+		>
+			<div className="project-popup__logo"><img src={verselLogo}/></div>
+			<span className="project-popup__link">visit versel</span>
+		</Button>
+	</div>
+</div>
+
+<div
+	onClick={() => {
+		setProjectOpen(false);
+		scrollAvailable();
+	}}
+	className="popup__overlay"
+></div>
+</> */}
