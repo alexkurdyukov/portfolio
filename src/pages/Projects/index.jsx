@@ -6,8 +6,9 @@ import projectPreview1 from "../../assets/images/AperturePreview.png";
 import projectPreview2 from "../../assets/images/SattelitePreview.png";
 import projectPreview3 from "../../assets/images/PortfolioPreview.png";
 import Button from "../../components/Button";
-import gitLogo  from '../../assets/images/icon-github.svg'
-import { scrollAvailable,scrollNotAvailable } from "../../scripts/scrollBlock";
+import gitLogo from "../../assets/images/icon-github.svg";
+import verselLogo from '../../assets/images/verselLogo.svg'
+import { scrollAvailable, scrollNotAvailable } from "../../scripts/scrollBlock";
 
 const projectsData = [
 	{
@@ -60,7 +61,7 @@ const Projects = () => {
 								setProjectOpen(true);
 								setCardIndex(index);
 								setProjectState(project);
-								scrollNotAvailable()
+								scrollNotAvailable();
 							}}
 							key={index}
 						>
@@ -107,9 +108,7 @@ const Projects = () => {
 									</span>{" "}
 									= '{projectState.name}'
 								</span>
-								
 							</h3>
-
 							<div className="project-popup__description">
 								<span className="project-popup_green">
 									const projectDescription ={" "}
@@ -144,7 +143,9 @@ const Projects = () => {
 								linkType={true}
 								className={`project-popup__button`}
 							>
-								<div className="project-popup__logo"><img src={gitLogo}/></div>
+								<div className="project-popup__logo">
+									<img src={gitLogo} />
+								</div>
 								<span className="project-popup__link">visit gitHub</span>
 							</Button>
 							<Button
@@ -152,15 +153,16 @@ const Projects = () => {
 								linkType={true}
 								className={`project-popup__button`}
 							>
-								<div className="project-popup__logo"></div>
+								<div className="project-popup__logo"><img src={verselLogo}/></div>
 								<span className="project-popup__link">visit versel</span>
 							</Button>
 						</div>
 					</div>
+
 					<div
 						onClick={() => {
 							setProjectOpen(false);
-							scrollAvailable()
+							scrollAvailable();
 						}}
 						className="popup__overlay"
 					></div>

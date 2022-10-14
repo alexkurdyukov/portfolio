@@ -24,6 +24,11 @@
 	flex-direction: column;
 	padding: 25px;
 	background-color: #112240;
+	transition: 0.4s all linear;
+	cursor: pointer;
+	&:hover {
+		box-shadow: 0 0 15px 5px $mainColor;
+	}
 	&__content {
 		margin-bottom: 15px;
 	}
@@ -35,7 +40,7 @@
 	}
 	&__header {
 		margin-bottom: 28px;
-		font-size: 35px; 
+		font-size: 35px;
 		line-height: 38px;
 		color: #a8b2d1;
 		display: flex;
@@ -61,20 +66,26 @@
 		align-items: center;
 		width: 70vw;
 		background-color: $secondColor;
-		position: absolute;
-		left:18vw;
+		position: fixed;
+		top: 10vh;
+		
 		border: 1px solid #ffffff;
 		z-index: 11;
 		padding: 15px;
-		top: 10vh;
+		margin: auto;
+		animation: 4s popupLight infinite;
+		left: 18vw;
+		@media (max-width:1800px){
+			left: 15vw;
+		}
 		@media (max-width: 1200px) {
 			width: 80vw;
 			left: 10vw;
 		}
-		&__technologies{
+		&__technologies {
 			display: flex;
 			margin-bottom: 10px;
-			@media(max-width:600px){
+			@media (max-width: 600px) {
 				font-size: 15px;
 			}
 		}
@@ -82,43 +93,34 @@
 			text-align: center;
 			font-size: 35px;
 			margin-bottom: 10px;
-			@media(max-width:600px){
+			@media (max-width: 600px) {
 				font-size: 15px;
 			}
-			&-name{
+			&-name {
 				font-size: 20px;
-				@media(max-width:600px){
+				@media (max-width: 600px) {
 					font-size: 15px;
 				}
 			}
 		}
-		&__description{
+		&__description {
 			margin-bottom: 20px;
 			padding: 5px;
-			@media(max-width:600px){
+			@media (max-width: 600px) {
 				font-size: 15px;
 			}
-		}
-		&__overlay {
-			position: absolute;
-			width: 100vw;
-			height: 300vh;
-			backdrop-filter: blur(2px);
-			left: 0;
-			top: 0;
-			z-index: 10;
 		}
 		&__preview {
 			height: 450px;
 			width: 550px;
 			margin: 0 auto;
 			margin-bottom: 10px;
-			@media(max-width: 1200px){
+			@media (max-width: 1200px) {
 				width: 400px;
 				height: 300px;
 			}
-			@media(max-width: 800px){
-				width:350px;
+			@media (max-width: 800px) {
+				width: 350px;
 				height: 250px;
 			}
 		}
@@ -133,31 +135,51 @@
 				max-width: 300px;
 			}
 		}
-		&__buttons{
+		&__buttons {
 			display: flex;
 			gap: 20px;
 		}
-		&__button{
-			border:1px solid #ffffff;
+		&__button {
+			border: 1px solid #ffffff;
 			color: #ffffff;
 			display: flex;
+			margin-top: 3px;
 			align-items: center;
 			gap: 5px;
-			&:hover{
-				box-shadow:0 0 10px 5px #B961FF;
-				color: #B961FF;
-				border: 1px solid #B961FF
-			} 
-			@media(max-width:600px){
+			padding: 5px;
+			&:hover {
+				box-shadow: 0 0 10px 5px #b961ff;
+				color: #b961ff;
+				border: 1px solid #b961ff;
+			}
+			@media (max-width: 600px) {
 				font-size: 12px;
 			}
 		}
-		&_green{
+		&_green {
 			color: $mainColor;
 			font-size: 20px;
-			@media(max-width:600px){
+			@media (max-width: 600px) {
 				font-size: 15px;
 			}
 		}
 	}
 }
+
+.popup__overlay {
+	position: absolute;
+	width: 100vw;
+	height: 300vh;
+	backdrop-filter: blur(2px);
+	left: 0;
+	top: 0;
+	z-index: 10;
+}
+
+@keyframes popupLight {
+	50% {
+		box-shadow: 0 0 15px 5px $mainColor;
+		border: 1px solid $mainColor;
+	}
+}
+

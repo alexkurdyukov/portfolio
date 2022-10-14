@@ -66,6 +66,7 @@
 		padding: 10px;
 		transition: all linear 0.4s;
 		z-index: 2;
+		position: relative;
 	}
 	&__wrapper {
 		display: flex;
@@ -104,12 +105,6 @@
 	transform: translateY(-14px) rotate(45deg);
 	background-color: #fc0b42;
 }
-
-// .burger__container{
-// 	&.--active .burger__wrapper{
-
-// 	}
-// }
 
 .header-mobile__menu {
 	transform: translateX(-100vw);
