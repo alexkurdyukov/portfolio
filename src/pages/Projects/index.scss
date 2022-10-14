@@ -60,44 +60,67 @@
 		justify-content: center;
 		align-items: center;
 		width: 70vw;
-		height: 85vh;
 		background-color: $secondColor;
 		position: absolute;
-		top: 7%;
-		left: 15vw;
+		left:18vw;
 		border: 1px solid #ffffff;
-		z-index: 2;
-		padding: 25px;
+		z-index: 11;
+		padding: 15px;
+		top: 10vh;
+		@media (max-width: 1200px) {
+			width: 80vw;
+			left: 10vw;
+		}
 		&__technologies{
 			display: flex;
-			margin-bottom: 20px;
+			margin-bottom: 10px;
+			@media(max-width:600px){
+				font-size: 15px;
+			}
 		}
 		&__header {
 			text-align: center;
 			font-size: 35px;
-			margin-bottom: 20px;
-			padding: 5px;
-			
+			margin-bottom: 10px;
+			@media(max-width:600px){
+				font-size: 15px;
+			}
+			&-name{
+				font-size: 20px;
+				@media(max-width:600px){
+					font-size: 15px;
+				}
+			}
 		}
 		&__description{
 			margin-bottom: 20px;
 			padding: 5px;
-			
+			@media(max-width:600px){
+				font-size: 15px;
+			}
 		}
 		&__overlay {
 			position: absolute;
 			width: 100vw;
-			height: 100vh;
+			height: 300vh;
 			backdrop-filter: blur(2px);
 			left: 0;
 			top: 0;
-			z-index: 1;
+			z-index: 10;
 		}
 		&__preview {
 			height: 450px;
-			width: 50%;
+			width: 550px;
 			margin: 0 auto;
-			margin-bottom: 20px;
+			margin-bottom: 10px;
+			@media(max-width: 1200px){
+				width: 400px;
+				height: 300px;
+			}
+			@media(max-width: 800px){
+				width:350px;
+				height: 250px;
+			}
 		}
 		&__content {
 			display: flex;
@@ -124,11 +147,17 @@
 				box-shadow:0 0 10px 5px #B961FF;
 				color: #B961FF;
 				border: 1px solid #B961FF
+			} 
+			@media(max-width:600px){
+				font-size: 12px;
 			}
 		}
 		&_green{
 			color: $mainColor;
 			font-size: 20px;
+			@media(max-width:600px){
+				font-size: 15px;
+			}
 		}
 	}
 }

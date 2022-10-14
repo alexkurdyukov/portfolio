@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 
-const Popup = (setTrigger) => {
-  const [isPopupOpen, setPopupOpen] = useState(false);
-  return isPopupOpen ? (
-    <div className="popup">
-      <div className="popup__overlay"></div>
-      <div className="popup__content"></div>
-    </div>
-  ) : (
-    ""
-  );
+const Popup = (children,setProjectOpen) => {
+	return (
+		<div className="popup__wrapper">
+			<div className="project-popup wrapper">
+				{children}
+			</div>
+			<div
+				onClick={() => {
+					setProjectOpen(false);
+				}}
+				className="popup__overlay"
+			></div>
+		</div>
+	);
 };
+
+export {Popup} 

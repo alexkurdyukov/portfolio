@@ -7,6 +7,7 @@ import projectPreview2 from "../../assets/images/SattelitePreview.png";
 import projectPreview3 from "../../assets/images/PortfolioPreview.png";
 import Button from "../../components/Button";
 import gitLogo  from '../../assets/images/icon-github.svg'
+import { scrollAvailable,scrollNotAvailable } from "../../scripts/scrollBlock";
 
 const projectsData = [
 	{
@@ -59,6 +60,7 @@ const Projects = () => {
 								setProjectOpen(true);
 								setCardIndex(index);
 								setProjectState(project);
+								scrollNotAvailable()
 							}}
 							key={index}
 						>
@@ -103,9 +105,9 @@ const Projects = () => {
 									<span className="project-popup_green">
 										const projectName{" "}
 									</span>{" "}
-									= '{projectState.name}
+									= '{projectState.name}'
 								</span>
-								'
+								
 							</h3>
 
 							<div className="project-popup__description">
@@ -158,6 +160,7 @@ const Projects = () => {
 					<div
 						onClick={() => {
 							setProjectOpen(false);
+							scrollAvailable()
 						}}
 						className="popup__overlay"
 					></div>
