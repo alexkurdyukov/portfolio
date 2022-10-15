@@ -2,17 +2,21 @@ import React from "react";
 import { Hystogramm } from "../../UI/Hystogramm";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
 import secondPhoto from "../../assets/images/mainPhoto2.jpg";
-
-
-
+import HobbieLogo from '../../assets/images/hobbie.svg'
+import BiographyLogo from '../../assets/images/biography.svg'
+import EducationLogo from '../../assets/images/education.svg'
+import DevLogo from '../../assets/images/devLogo.svg'
+import SoftSkills from '../../assets/images/softSkills.svg'
+import HardSkills from '../../assets/images/hardSkills.svg'
+ 
 
 const infoData = [
-  {name:'education',imageLink:''},
-  {name:'hobbies'},
-  {name:'biography'},
-  {name:'hard-skills'},
-  {name:'soft-skills'},
-  {name:'dev'}
+  {name:'education',imageLink:EducationLogo},
+  {name:'hobbies',imageLink:HobbieLogo},
+  {name:'biography',imageLink:BiographyLogo},
+  {name:'hard-skills',imageLink:SoftSkills},
+  {name:'soft-skills',imageLink:HardSkills},
+  {name:'dev',imageLink:DevLogo}
 ];
 
 
