@@ -21,9 +21,9 @@ const TyppingPoint = () =>{
     },[blink])
     
     return (
-        <p>
+        <span>
             {`${massive.substring(0,subIndex)}${blink?'|':''}`}
-        </p>
+        </span>
     )
 }
 

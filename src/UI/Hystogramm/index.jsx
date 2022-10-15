@@ -14,6 +14,7 @@ const Hystogramm = () => {
 	return (
 		<div>
 			<table className="table">
+				<thead>
 				<tr className="table__legend">
 					{skillData.map((skill, index) => (
 						<td key={index} className="table__cell">
@@ -33,6 +34,8 @@ const Hystogramm = () => {
 						</th>
 					))}
 				</tr>
+				</thead>
+				<tfoot></tfoot>
 			</table>
 		</div>
 	);

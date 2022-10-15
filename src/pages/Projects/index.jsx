@@ -7,8 +7,9 @@ import projectPreview2 from "../../assets/images/SattelitePreview.png";
 import projectPreview3 from "../../assets/images/PortfolioPreview.png";
 import Button from "../../components/Button";
 import gitLogo from "../../assets/images/icon-github.svg";
-import verselLogo from '../../assets/images/verselLogo.svg'
+import verselLogo from "../../assets/images/verselLogo.svg";
 import { scrollAvailable, scrollNotAvailable } from "../../scripts/scrollBlock";
+import { Popup } from "../../components/Popup";
 
 const projectsData = [
 	{
@@ -99,74 +100,67 @@ const Projects = () => {
 			</div>
 			{projectOpen && (
 				<>
-					<div className ='box'>
-						<div className="project-popup wrapper">
-							<div className="project-container">
-								<h3 className="project-popup__header">
-									<span className="project-popup__header-name">
-										<span className="project-popup_green">
-											const projectName{" "}
-										</span>{" "}
-										= '{projectState.name}'
-									</span>
-								</h3>
-								<div className="project-popup__description">
+					<Popup setProjectOpen={setProjectOpen} projectState={projectState}>
+						<div className="project-container">
+							<h3 className="project-popup__header">
+								<span className="project-popup__header-name">
 									<span className="project-popup_green">
-										const projectDescription ={" "}
-									</span>
-									{`'`}
-									{projectState.modaleDescription}
-									{`'`}
-								</div>
-								<div className="project-popup__preview-container">
-									<img
-										src={projectState.previewBackground}
-										className="project-popup__preview"
-									/>
-								</div>
+										const projectName{" "}
+									</span>{" "}
+									= '{projectState.name}'
+								</span>
+							</h3>
+							<div className="project-popup__description">
+								<span className="project-popup_green">
+									const projectDescription ={" "}
+								</span>
+								{`'`}
+								{projectState.modaleDescription}
+								{`'`}
 							</div>
-							<div className="project-popup__technologies">
-								<span className="project-popup_green">technologies</span>=[
-								{projectState.technologies.map((tech, index) => (
-									<div className="project-popup__technologies" key={index}>
-										{index == projectState.technologies.length - 1 ? (
-											<span>{tech}</span>
-										) : (
-											<span>{tech}, </span>
-										)}
-									</div>
-								))}
-								]
-							</div>
-							<div className="project-popup__buttons">
-								<Button
-									href={projectState.githubLink}
-									linkType={true}
-									className={`project-popup__button`}
-								>
-									<div className="project-popup__logo">
-										<img src={gitLogo} />
-									</div>
-									<span className="project-popup__link">visit gitHub</span>
-								</Button>
-								<Button
-									href={projectState.verselLink}
-									linkType={true}
-									className={`project-popup__button`}
-								>
-									<div className="project-popup__logo"><img src={verselLogo}/></div>
-									<span className="project-popup__link">visit versel</span>
-								</Button>
+							<div className="project-popup__image-container">
+								<img
+									src={projectState.previewBackground}
+									className="project-popup__image"
+								/>
 							</div>
 						</div>
-					</div>				
-					<div
-						onClick={() => {
-							setProjectOpen(false);
-							scrollAvailable();
-						}}
-						className="popup__overlay"
-					></div>
+						<div className="project-popup__technologies">
+							<span className="project-popup_green">technologies</span>=[
+							{projectState.technologies.map((tech, index) => (
+								<div className="project-popup__technologies" key={index}>
+									{index == projectState.technologies.length - 1 ? (
+										<span>{tech}</span>
+									) : (
+										<span>{tech}, </span>
+									)}
+								</div>
+							))}
+							]
+						</div>
+						<div className="project-popup__buttons">
+							<Button
+								href={projectState.githubLink}
+								linkType={true}
+								className={`project-popup__button`}
+							>
+								<div className="project-popup__logo">
+									<img src={gitLogo} />
+								</div>
+								<span className="project-popup__link">visit gitHub</span>
+							</Button>
+							<Button
+								href={projectState.verselLink}
+								linkType={true}
+								className={`project-popup__button`}
+							>
+								<div className="project-popup__logo">
+									<img src={verselLogo} />
+								</div>
+								<span className="project-popup__link">visit versel</span>
+							</Button>
+						</div>
+					</Popup>
 				</>
 			)}
 		</>
@@ -175,9 +169,8 @@ const Projects = () => {
 
 export { Projects };
 
-
-
-{/* <>
+{
+	/* <>
 <div className="project-popup wrapper">
 	<div className="project-container">
 		<h3 className="project-popup__header">
@@ -245,4 +238,5 @@ export { Projects };
 	}}
 	className="popup__overlay"
 ></div>
-</> */}
+</> */
+}
