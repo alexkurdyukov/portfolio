@@ -8,13 +8,14 @@ import { useWindowWidth } from "../../hooks/useWindowWidth";
 import { Contacts } from "../Contacts";
 import { useEffect } from "react";
 
-const Intro = ({page, setPage}) => {
+const Intro = ({ page, setPage }) => {
   const windowWidth = useWindowWidth();
-  useEffect(()=>{console.log('state changes')},[page])
+  useEffect(() => {
+    console.log("state changes");
+  }, [page]);
   return (
     <div className="intro">
       <div className="intro__wrapper wrapper">
-        
         <div className="intro__content">
           <p className="intro__title">
             Hi, my name is
@@ -36,7 +37,7 @@ const Intro = ({page, setPage}) => {
           <Button
             className="intro__button"
             onClick={() => {
-              setPage('contacts');
+              setPage("contacts");
             }}
           >
             Say Hello

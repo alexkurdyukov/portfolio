@@ -3,17 +3,83 @@
 	display: flex;
 	flex-grow: 1;
 	&__wrapper{
-		display: grid;
-		grid-template-columns: 200px 1fr 1fr;
-		border: 1px solid $mainColor;
+		display: flex;
+		gap: 10px;
+		font-size: 12px;
 	}
 }
 
-
+.info{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+	border: 1px solid #ffffff;
+	border-radius: 2px;
+	padding: 10px;
+	&__header{
+		font-size: 20px;
+		margin-bottom: 30px;
+	}
+	&__navigation{
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: flex-start;
+		gap: 5px;
+	}
+}
 .info-point{
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: start;
+	gap: 15px;
 	padding: 5px 10px;
-	border: 1px solid $mainColor;
+	border: 1px solid #ffffff;
+	border-radius: 2px;
+	width: 100%;
+	cursor: pointer;
+	&__image{
+		&-container{
+			width: 30px;
+			height: 30px;
+		}
+	}
+}
+
+.info-content{
+	border: 1px solid #ffffff;
+	border-radius: 2px;
+	width: 800px;
+}
+
+
+.education{
+	padding: 20px;
+	&__link-container{
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		border: 1px solid #ffffff;
+		padding: 20px;
+	}
+	&__header{
+		color: #E07C08;
+	}
+	&__description{
+		width: 100%;
+	}
+	&__institution{
+		width: 100%;
+		font-size: 25px;
+	}
+	&-list{
+		display: flex;
+		flex-direction: column;
+		&__item{
+			border-bottom: 1px solud #ffffff;
+			margin-bottom: 20px;
+			background-color: $secondColor;
+		}
+	}
 }
