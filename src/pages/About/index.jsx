@@ -10,7 +10,7 @@ import DevLogo from "../../assets/images/devLogo.svg";
 import SoftSkillsLogo from "../../assets/images/softSkills.svg";
 import HardSkillsLogo from "../../assets/images/hardSkills.svg";
 import { useEffect } from "react";
-import Button from '../../components/Button/index.jsx'
+import Button from "../../components/Button/index.jsx";
 
 const infoData = [
   { name: "education", imageLink: EducationLogo },
@@ -49,7 +49,9 @@ const About = () => {
           </div>
         </div>
         <div className="info-content">
+          <h2 className="info__title">My {aboutPage}</h2>
           {aboutPage == "education" && <Education />}
+          {aboutPage == 'hobbies' && <Hobbies/>}
         </div>
       </div>
     </div>
@@ -93,14 +95,39 @@ const Education = () => {
           <li className="education-list__item" key={index}>
             <a className="education__link-container">
               <h3 className="education__header">{diploma.name}</h3>
-              <div className="education__institution">{diploma.institution}</div>
+              <div className="education__institution">
+                {diploma.institution}
+              </div>
               <div className="education__description">{diploma.type}</div>
-              <Button>download</Button>
+              <Button className={"education__button"}>download</Button>
             </a>
-          
           </li>
         ))}
       </ul>
     </div>
+  );
+};
+
+const hobbiesData = [
+  { name: "Gaming", imageLink: `` },
+  { name: "Gym", imageLink: `` },
+  { name: "Camping", imageLink: `` },
+  { name: "Boxing", imageLink: `` },
+  { name: "Meditation", imageLink: `` },
+  { name: "Drawing", imageLink: `` },
+];
+
+const Hobbies = () => {
+  return (
+    <ul className="hobbies">
+      {hobbiesData.map((hobbie, index) => (
+        <li key={index} className="hobbie">
+          <div className="hobbie__image-container">
+            <img className="hobbie__image" />
+          </div>
+          <span className="hobbie__name">{hobbie.name}</span>
+        </li>
+      ))}
+    </ul>
   );
 };
