@@ -101,9 +101,8 @@
 		border-radius: 10px;
 		border: 1px solid $mainColor;
 		gap: 5px;
-		z-index: 3;
+		z-index: 12;
 		position:relative;
-		
 		&-text{
 			font-size: 40px;
 		}
@@ -122,5 +121,5 @@
 	backdrop-filter: blur(5px);
 	left:0;
 	top: 0;
-	z-index: 1;
+	z-index: 11;
 }
