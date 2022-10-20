@@ -60,20 +60,21 @@
 		width: 80vw;
 		background-color: $secondColor;
 		position: fixed;
-		// top: 10vh;
 		border: 1px solid #ffffff;
 		z-index: 11;
 		padding: 15px;
-		// left: 27%;
 		animation: 4s popupLight infinite;
 		@media (max-width: 1200px) {
-			top: 20vh;
+			top: 10vh;
 		}
 		&__technologies {
 			display: flex;
 			margin-bottom: 10px;
 			@media (max-width: 600px) {
 				font-size: 15px;
+			}
+			@media (max-width: 450px) {
+				font-size: 12px;
 			}
 		}
 		&__header {

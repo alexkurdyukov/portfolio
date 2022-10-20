@@ -8,18 +8,24 @@ import { About } from "./pages/About";
 import { Contacts } from "./pages/Contacts";
 import { CSSTransition } from "react-transition-group";
 import "./assets/scss/index.scss";
+import HeaderLogo from "./assets/images/header-logo.svg";
 
 const App = () => {
   const [page, setPage] = useState("intro");
   const windowWidth = useWindowWidth();
   const [isLoading, setIsLoading] = useState(true);
-  useEffect(()=>{
-    setTimeout(()=>{setIsLoading(false)},2000)
-  },[])
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
   return (
     <div className="layout">
       {isLoading ? (
-        <div>Stepan</div>
+        <div className="loader">
+          <div className="loader__circle"></div>
+          <img className="loader__img" src={HeaderLogo} />
+        </div>
       ) : (
         <>
           <Header page={page} setPage={setPage} />

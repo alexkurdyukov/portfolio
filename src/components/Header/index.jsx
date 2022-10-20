@@ -64,7 +64,7 @@ const HeaderMobile = ({ setPage, page }) => {
 								setPage(item.name);
 								setOpen(!isOpen);
 								setOverlayOpen(!overlayIsOpen);
-								scrollNotAvailable();
+								scrollAvailable()
 							}}
 							className="mobile-menu__element"
 							key={item.id}

@@ -29,12 +29,14 @@ import Button from "../../components/Button/index.jsx";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
+
 const infoData = [
   { name: "education", imageLink: EducationLogo },
   { name: "hobbies", imageLink: HobbieLogo },
   { name: "biography", imageLink: BiographyLogo },
   { name: "hard-skills", imageLink: HardSkillsLogo },
   { name: "soft-skills", imageLink: SoftSkillsLogo },
+  {name:'dev', imageLink:DevLogo}
 ];
 
 const About = () => {
@@ -51,7 +53,7 @@ const About = () => {
             {infoData.map((point, index) => (
               <div
                 key={index}
-                className="info-point"
+                className={`info-point ${(aboutPage==point.name)?'--active':''}` }
                 onClick={() => {
                   setAboutPage(point.name);
                 }}
@@ -138,9 +140,13 @@ const Hobbies = () => {
   return (
     <ul className="hobbies">
       {hobbiesData.map((hobbie, index) => (
-        <li key={index} className="hobbie">
+        <li
+          key={index}
+          className="hobbie"
+          style={{ animationDelay: `${index / 2.5}s` }}
+        >
           <div className="hobbie__image-container">
-            <img key={index} className="hobbie__image" src={hobbie.imageLink} />
+            <img className="hobbie__image" src={hobbie.imageLink} />
           </div>
           <span className="hobbie__name">{hobbie.name}</span>
         </li>

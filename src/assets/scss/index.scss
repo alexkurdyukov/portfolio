@@ -38,7 +38,6 @@ body {
 .layout {
 	width: 100vw;
 	height: 100vh;
-	// overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	position: relative;
@@ -48,6 +47,42 @@ body {
 	max-width: 1200px;
  }
 
+ .loader{
+	width: 100vw;
+	height:100vh;
+	position: absolute;
+	top:0;
+	left:0;
+	background-color: $bgColor;
+	display: flex;
+	align-items: center;
+	justify-content: center ;
+	&__circle{
+		border-radius: 50%;
+		border: 5px dashed #a8b2d1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		animation: rotation 2s forwards;
+		width: 200px;
+		height: 200px;
+		
+	}
+	&__img{
+		width:200px;
+		height: 200px;
+		position: absolute;
+	}
+ }
+
+@keyframes rotation{
+	from{
+		transform:rotate(0deg)
+	}
+	to{
+		transform: rotate(180deg)
+	}
+}
 @keyframes clacksAnim{
 	0%{
 		transform: scale(0.9);

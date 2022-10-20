@@ -13,6 +13,10 @@
     grid-template-columns: 1fr 4fr;
     gap: 10px;
     font-size: 15px;
+    @media (max-width: 550px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
 
@@ -26,6 +30,10 @@
   padding: 0 20px;
   @media (max-width: 925px) {
     padding: 0 10px;
+  }
+  @media (max-width: 550px) {
+    justify-content: center;
+    margin-bottom: 10px;
   }
   &__title {
     font-size: 35px;
@@ -45,6 +53,7 @@
     }
     @media (max-width: 500px) {
       font-size: 16px;
+      margin-bottom: 15px;
     }
   }
   &__navigation {
@@ -53,6 +62,12 @@
     justify-content: start;
     align-items: flex-start;
     gap: 20px;
+    @media (max-width: 550px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
   }
   &-point {
     display: flex;
@@ -60,14 +75,20 @@
     justify-content: start;
     gap: 15px;
     padding: 5px 10px;
-    width: 100%;
     cursor: pointer;
     font-size: 18px;
+    &.--active{
+      outline: 2px solid $mainColor
+    }
     @media (max-width: 925px) {
       font-size: 12px;
     }
+    @media (max-width: 550px) {
+      width: 140px;
+      outline: 1px solid #a8b2d1;
+    }
     @media (max-width: 500px) {
-      padding: 0;
+      padding: 5;
     }
     &__image {
       &-container {
@@ -156,6 +177,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  overflow: hidden;
 }
 
 .hobbie {
@@ -168,6 +190,9 @@
   padding: 15px 25px;
   gap: 15px;
   color: $bgColor;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: hobbiesPointing 1s forwards;
   &__image-container {
     width: 60px;
     height: 60px;
@@ -277,10 +302,7 @@
     max-width: 300px;
   }
   @media (max-width: 550px) {
-    max-width: 200px;
-  }
-  @media (max-width: 380px) {
-    max-width: 150px;
+    max-width: 250px;
   }
 }
 
@@ -302,8 +324,8 @@
     height: 350px;
   }
   @media (max-width: 550px) {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
   }
 }
 
@@ -348,5 +370,12 @@
 @keyframes softSkillPointing {
   to {
     opacity: 1;
+  }
+}
+
+@keyframes hobbiesPointing {
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
