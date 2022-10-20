@@ -14,7 +14,6 @@
 			flex-direction: column;
 		}
 	}
-
 	&__subtitle {
 		font-family: "Inter";
 		font-weight: 600;
@@ -23,6 +22,13 @@
 		display: flex;
 		align-items: center;
 		color: #a8b2d1;
+		@media(max-width: 650px){
+			font-size: 25px;
+			line-height: 40px;
+		}
+		@media(max-width: 350px){
+			font-size: 20px;
+		}
 	}
 	&__title {
 		font-weight: 300;
@@ -48,20 +54,30 @@
 		line-height: 34px;
 		color: #a8b2d1;
 		margin-bottom: 40px;
+		@media(max-width: 650px){
+			font-size: 18px;
+			line-height: 25px;
+		}
 	}
 	&__button {
 		max-width: 150px;
 	}
+	&__name{
+		font-weight: 700;
+		font-size: 60px;
+		line-height: 90px;
+		display: flex;
+		align-items: center;
+		color: #d9d9d9;
+		@media(max-width: 650px){
+			font-size: 40px;
+		}
+		@media (max-width: 420px){
+			font-size: 30px;
+		}
+	}
 }
 
-.intro__name {
-	font-weight: 700;
-	font-size: 60px;
-	line-height: 90px;
-	display: flex;
-	align-items: center;
-	color: #d9d9d9;
-}
 
 $background: $bgColor;
 $foreground: white;

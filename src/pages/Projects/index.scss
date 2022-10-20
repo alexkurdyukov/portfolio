@@ -8,7 +8,7 @@
 		max-width: 1300px;
 	}
 	@media (max-width: 1376px) {
-		padding: 2rem 3vw;
+		padding: 2rem 20px;
 	}
 }
 
@@ -69,7 +69,6 @@
 		@media (max-width: 1200px) {
 			top: 20vh;
 		}
-
 		&__technologies {
 			display: flex;
 			margin-bottom: 10px;
