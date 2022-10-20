@@ -171,40 +171,40 @@
   &__image-container {
     width: 60px;
     height: 60px;
-	@media(max-width:700px){
-		width: 40px;
-		height:40px;
-	  }
-	  @media(max-width:450px){
-		width: 30px;
-		height: 30px;
-	  }
+    @media (max-width: 700px) {
+      width: 40px;
+      height: 40px;
+    }
+    @media (max-width: 450px) {
+      width: 30px;
+      height: 30px;
+    }
   }
-  @media(max-width:700px){
-	padding:10px 15px;
+  @media (max-width: 700px) {
+    padding: 10px 15px;
   }
-  @media(max-width:450px){
-	padding: 5px 10px;
-	font-size: 17px;
+  @media (max-width: 450px) {
+    padding: 5px 10px;
+    font-size: 17px;
   }
 }
 
 .biography {
   &-container {
     font-size: 18px;
-	@media(max-width: 550px){
-		font-size: 12px;
-	  }
+    @media (max-width: 550px) {
+      font-size: 12px;
+    }
   }
   &_green {
     color: $mainColor;
     font-size: 23px;
-	@media(max-width: 450px){
-		font-size: 18px;
-	}
-	@media(max-width: 400px){
-		font-size: 13px;
-	}
+    @media (max-width: 450px) {
+      font-size: 18px;
+    }
+    @media (max-width: 400px) {
+      font-size: 13px;
+    }
   }
   &_violet {
     color: #b961ff;
@@ -220,11 +220,11 @@
   gap: 32px;
   width: 100%;
   padding: 30px 40px;
-  @media(max-width: 900px){
-	gap:20px;
+  @media (max-width: 900px) {
+    gap: 20px;
   }
-  @media(max-width:700px){
-	padding:10px;
+  @media (max-width: 700px) {
+    padding: 10px;
   }
 }
 .hard-skill {
@@ -232,20 +232,20 @@
   flex-direction: column;
   font-size: 25px;
   gap: 3px;
-  @media(max-width:1000px){
-	font-size:18px;
+  @media (max-width: 1000px) {
+    font-size: 18px;
   }
-  @media(max-width:800px){
-	font-size:15px;
+  @media (max-width: 800px) {
+    font-size: 15px;
   }
   &__container {
     height: 30px;
     width: 100%;
     border-radius: 10px;
     background-color: #112240;
-	@media(max-width:800px){
-		height:20px;
-	  }
+    @media (max-width: 800px) {
+      height: 20px;
+    }
   }
   &__innerline {
     background: linear-gradient(90deg, rgb(100, 255, 218), rgb(185, 97, 255));
@@ -255,9 +255,9 @@
     opacity: 0;
     width: 0;
     animation: innerlineChanges 1s ease-in forwards;
-	@media(max-width:800px){
-		height:20px;
-	  }
+    @media (max-width: 800px) {
+      height: 20px;
+    }
   }
   &__description {
     display: flex;
@@ -273,14 +273,14 @@
   border-radius: 20px;
   margin-bottom: 20px;
   margin: 0 auto 20px;
-  @media(max-width: 750px){
-	max-width: 300px;
+  @media (max-width: 750px) {
+    max-width: 300px;
   }
-  @media(max-width: 550px){
-	max-width: 200px;
+  @media (max-width: 550px) {
+    max-width: 200px;
   }
-  @media(max-width: 380px){
-	max-width: 150px;
+  @media (max-width: 380px) {
+    max-width: 150px;
   }
 }
 
@@ -297,17 +297,15 @@
   height: 450px;
   margin: 0 auto;
   border-radius: 20px;
-  @media(max-width: 1150px){
-	width:350px;
-	height:350px;
+  @media (max-width: 1150px) {
+    width: 350px;
+    height: 350px;
   }
-  @media(max-width: 550px){
-	width: 2000px;
-	height: 200px;
+  @media (max-width: 550px) {
+    width: 200px;
+    height: 200px;
   }
 }
-
-
 
 .soft-skills {
   display: flex;
@@ -315,8 +313,8 @@
   gap: 35px;
   position: relative;
   padding: 20px 0;
-  @media(max-width: 900px){
-	gap:15px;
+  @media (max-width: 900px) {
+    gap: 15px;
   }
 }
 
@@ -331,14 +329,13 @@
   opacity: 0;
   text-align: center;
   animation: softSkillPointing 1s ease-in forwards;
-  @media(max-width: 600px){
-	font-size:18px;
+  @media (max-width: 600px) {
+    font-size: 18px;
   }
-  @media(max-width: 430px){
-	font-size:13px;
-	padding: 5px 10px;
+  @media (max-width: 430px) {
+    font-size: 13px;
+    padding: 5px 10px;
   }
-
 }
 
 @keyframes innerlineChanges {

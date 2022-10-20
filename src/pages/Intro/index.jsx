@@ -34,6 +34,7 @@ const Intro = ({ page, setPage }) => {
             every place I go. I'm the happiest when I am creating, learning,
             exploring and thinking on how to make things better.
           </p>
+          
           <Button
             className="intro__button"
             onClick={() => {
@@ -42,6 +43,7 @@ const Intro = ({ page, setPage }) => {
           >
             Say Hello
           </Button>
+          
         </div>
         {windowWidth && windowWidth > 1200 && <Game />}
       </div>

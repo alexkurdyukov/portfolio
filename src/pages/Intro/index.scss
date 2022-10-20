@@ -1,128 +1,197 @@
 .intro {
-	padding: 2rem 0;
-	display: flex;
-	flex-grow: 1;
-	@media (max-width: 1200px) {
-		padding: 2rem 5vw;
-	}
-	&__wrapper {
-		display: flex;
-		gap: 91px;
-		align-items: center;
-		justify-content: space-between;
-		@media (max-width: 840px) {
-			flex-direction: column;
-		}
-	}
-	&__subtitle {
-		font-family: "Inter";
-		font-weight: 600;
-		font-size: 35px;
-		line-height: 73px;
-		display: flex;
-		align-items: center;
-		color: #a8b2d1;
-		@media(max-width: 650px){
-			font-size: 25px;
-			line-height: 40px;
-		}
-		@media(max-width: 350px){
-			font-size: 20px;
-		}
-	}
-	&__title {
-		font-weight: 300;
-		font-size: 25px;
-		line-height: 38px;
-		color: #64ffda;
-		display: flex;
-	}
-	&__container {
-		display: flex;
-		flex-direction: column;
-	}
-	&__content {
-		display: flex;
-		flex-direction: column;
-		justify-content: start;
-		max-width: 650px;
-		font-style: normal;
-	}
-	&__description {
-		font-weight: 400;
-		font-size: 23px;
-		line-height: 34px;
-		color: #a8b2d1;
-		margin-bottom: 40px;
-		@media(max-width: 650px){
-			font-size: 18px;
-			line-height: 25px;
-		}
-	}
-	&__button {
-		max-width: 150px;
-	}
-	&__name{
-		font-weight: 700;
-		font-size: 60px;
-		line-height: 90px;
-		display: flex;
-		align-items: center;
-		color: #d9d9d9;
-		@media(max-width: 650px){
-			font-size: 40px;
-		}
-		@media (max-width: 420px){
-			font-size: 30px;
-		}
-	}
+  padding: 2rem 0;
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+  @media (max-width: 1200px) {
+    padding: 2rem 5vw;
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    background: radial-gradient(
+      circle,
+      rgba(100, 255, 218, 1) 0%,
+      rgba(17, 34, 64, 1) 100%
+    );
+    z-index: 0;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(60px);
+    top: 15%;
+    left: 55%;
+    animation: clacksAnim 20s linear infinite;
+    opacity: 40%;
+    @media (max-width: 1400px) {
+      width: 400px;
+      height: 400px;
+      left: 45%;
+    }
+    @media (max-width: 700px) {
+      width: 300px;
+      height: 300px;
+      left: 25%;
+    }
+    @media (max-width: 400px) {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    background: radial-gradient(
+      circle,
+      rgba(185, 97, 255, 1) 0%,
+      rgba(17, 34, 64, 1) 100%
+    );
+    z-index: 0;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(60px);
+    top: 30%;
+    left: 60%;
+    animation: clacksAnim 20s linear infinite;
+    opacity: 40%;
+    animation-delay: 0.5s;
+    @media (max-width: 1400px) {
+      width: 400px;
+      height: 400px;
+      left: 50%;
+    }
+    @media (max-width: 700px) {
+      width: 300px;
+      height: 300px;
+      left: 35%;
+    }
+    @media (max-width: 400px) {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    gap: 91px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    @media (max-width: 840px) {
+      flex-direction: column;
+    }
+  }
+  &__subtitle {
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 73px;
+    display: flex;
+    align-items: center;
+    color: #a8b2d1;
+    @media (max-width: 650px) {
+      font-size: 28px;
+      line-height: 40px;
+    }
+    @media (max-width: 400px) {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+  &__title {
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 38px;
+    color: #64ffda;
+    display: flex;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    max-width: 650px;
+    font-style: normal;
+  }
+  &__description {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 34px;
+    color: #a8b2d1;
+    margin-bottom: 40px;
+    @media (max-width: 650px) {
+      font-size: 23px;
+      line-height: 30px;
+    }
+  }
+  &__button {
+    max-width: 150px;
+  }
+  &__name {
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 90px;
+    display: flex;
+    align-items: center;
+    color: #d9d9d9;
+    @media (max-width: 650px) {
+      font-size: 40px;
+    }
+    @media (max-width: 420px) {
+      font-size: 30px;
+    }
+  }
 }
-
 
 $background: $bgColor;
 $foreground: white;
 
 @mixin gitchText($offset, $text) {
-	content: $text;
-	position: absolute;
-	left: $offset;
-	top: $offset;
-	clip: rect(0, 830px, 0, 0);
-	background-color: $background;
-	color: $foreground;
-	animation: glitch 4s infinite alternate-reverse;
-	animation-delay: 4s;
+  content: $text;
+  position: absolute;
+  left: $offset;
+  top: $offset;
+  clip: rect(0, 830px, 0, 0);
+  background-color: $background;
+  color: $foreground;
+  animation: glitch 4s infinite alternate-reverse;
+  animation-delay: 4s;
 }
 
-.glitch{
-	margin-right: 20px;
+.glitch {
+  margin-right: 20px;
 }
 
-.glitch{
-	color: $background;
-	color: $mainColor;
-	animation: fadeWhite 4s forwards;
-	animation-delay: 2s;
-	position: relative;
-	&:after {
-		@include gitchText(2px, "FrontendDeveloper");
-	}
-	&:before {
-		@include gitchText(-2px, "Coder");
-	}
+.glitch {
+  color: $background;
+  color: $mainColor;
+  animation: fadeWhite 4s forwards;
+  animation-delay: 2s;
+  position: relative;
+  &:after {
+    @include gitchText(2px, "FrontendDeveloper");
+  }
+  &:before {
+    @include gitchText(-2px, "Coder");
+  }
 }
 
 @keyframes fadeWhite {
-	100% {
-		color: #B961FF;
-	}
+  100% {
+    color: #b961ff;
+  }
 }
 
 @keyframes glitch {
-	$steps: 20;
-	@for $i from 0 through $steps {
-		#{percentage($i * (1 / $steps))} {
-			clip: rect(random(100) + px, 9999px, random(100) + px, 0);
-		}
-	}
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i * (1 / $steps))} {
+      clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+    }
+  }
 }

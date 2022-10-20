@@ -3,6 +3,8 @@ import Button from "../Button";
 import { ReactComponent as HeaderLogo } from "../../assets/images/header-logo.svg";
 import { useState } from "react";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
+import { scrollAvailable, scrollNotAvailable } from "../../scripts/scrollBlock";
+
 
 
 const headerData = [
@@ -62,6 +64,7 @@ const HeaderMobile = ({ setPage, page }) => {
 								setPage(item.name);
 								setOpen(!isOpen);
 								setOverlayOpen(!overlayIsOpen);
+								scrollNotAvailable();
 							}}
 							className="mobile-menu__element"
 							key={item.id}
