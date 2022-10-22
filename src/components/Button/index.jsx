@@ -4,7 +4,7 @@ const Button = ({ className, children, linkType, onClick, type, href }) => {
 	return (
 		<>
 			{linkType ? (
-				<a href={href} className={`button ${className ? className : ""}`}>{children}</a>
+				<a href={href} className={`button ${className ? className : ""}`} target='_blank'>{children}</a>
 			) : (
 				<button 
 					type={`${type? type:'button'}`}

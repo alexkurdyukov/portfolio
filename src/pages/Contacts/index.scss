@@ -43,9 +43,9 @@
 		row-gap: 50px;
 		width: 100%;
 		margin-bottom: 40px;
-		@media(max-width: 400px){
+		@media(max-width: 450px){
 			grid-template-columns: repeat(1, minmax(100px, 1fr));
-			row-gap: 50px;
+			row-gap: 60px;
 		}
 	}
 	&__wrapper {

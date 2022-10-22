@@ -40,11 +40,11 @@ const Game = () => {
     console.log(`function is working , now state is ${totalGameState}`);
     if (!winner && gameState == "draw") {
       setTotalGameState("draw");
-      console.log(totalGameState);
+      
     }
     if ((winner === "o" || winner === "x") && gameState == "draw") {
       setTotalGameState(winner);
-      console.log(totalGameState);
+      
     }
   };
   useEffect(() => {

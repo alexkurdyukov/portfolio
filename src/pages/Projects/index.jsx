@@ -36,7 +36,7 @@ const projectsData = [
   },
   {
     name: "React Portfolio",
-    technologies: ["HTML", "SCSS",  "React JS"],
+    technologies: ["HTML", "SCSS", "React JS"],
     description:
       "It's my first react experiance,where i have used react states, hooks and also SCSS",
     verselLink: "https://sattelite-images-maket.vercel.app/",

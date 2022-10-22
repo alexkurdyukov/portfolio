@@ -45,7 +45,7 @@ const HeaderDesktop = ({ page, setPage, setIsLoading }) => {
   );
 };
 
-const HeaderMobile = ({ setPage, page, setIsLoading }) => {
+const HeaderMobile = ({ setPage, setIsLoading }) => {
   const windowWidth = useWindowWidth();
   const [isOpen, setOpen] = useState(false);
   const [overlayIsOpen, setOverlayOpen] = useState(false);
@@ -56,6 +56,7 @@ const HeaderMobile = ({ setPage, page, setIsLoading }) => {
         onClick={() => {
           setOverlayOpen(false);
           setOpen(false);
+          scrollAvailable();
         }}
       ></div>
       <div className={`header-mobile__menu ${isOpen ? "--active" : ""}`}>
@@ -92,6 +93,7 @@ const HeaderMobile = ({ setPage, page, setIsLoading }) => {
         onClick={() => {
           setOpen(!isOpen);
           setOverlayOpen(!overlayIsOpen);
+          scrollNotAvailable();
         }}
         className={`burger burger__container ${isOpen ? "--active" : ""}`}
       >
