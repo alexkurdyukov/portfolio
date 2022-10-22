@@ -9,6 +9,7 @@ import { Contacts } from "./pages/Contacts";
 import { CSSTransition } from "react-transition-group";
 import "./assets/scss/index.scss";
 import HeaderLogo from "./assets/images/header-logo.svg";
+import { set } from "react-hook-form";
 
 const App = () => {
   const [page, setPage] = useState("intro");
@@ -17,18 +18,19 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 3000);
   }, []);
   return (
     <div className="layout">
       {isLoading ? (
         <div className="loader">
-          <div className="loader__circle"></div>
-          <img className="loader__img" src={HeaderLogo} />
+          <span className="loader__name">Loading</span>
+          <div className="loader__circle circle__animation"></div>
+          <span className="loader__name">portfolio</span>
         </div>
       ) : (
         <>
-          <Header page={page} setPage={setPage} />
+          <Header page={page} setPage={setPage} setIsLoading={setIsLoading}/>
           {page === "intro" && <Intro page={page} setPage={setPage} />}
           {page === "about" && <About />}
           {page === "projects" && <Projects />}

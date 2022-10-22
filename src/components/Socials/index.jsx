@@ -4,11 +4,12 @@ import { ReactComponent as InstagramIcon } from "../../assets/images/icon-instag
 import { ReactComponent as GithubIcon } from "../../assets/images/icon-github.svg";
 import { ReactComponent as TelegramIcon } from "../../assets/images/icon-telegram.svg";
 
+
 const socialsData = [
-  { icon: <TwitterIcon />, href: "https://investor.twitterinc.com/" },
-  { icon: <InstagramIcon />, href: "#" },
-  { icon: <GithubIcon />, href: "https://github.com/alexkurdyukov" },
   { icon: <TelegramIcon />, href: "https://t.me/wirtuoz2033/" },
+  { icon: <GithubIcon />, href: "https://github.com/alexkurdyukov" },
+  { icon: <InstagramIcon />, href: "#" },
+  { icon: ``, href:'https://vk.com/wirtuoz2033'}
 ];
 
 const Socials = () => {

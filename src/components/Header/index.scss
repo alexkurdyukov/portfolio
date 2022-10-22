@@ -147,12 +147,16 @@
 
 .overlay {
 	position: absolute;
+	transform: translateX(-100%);
 	z-index: 2;
-	backdrop-filter: blur(25px);
+	backdrop-filter: blur(35px);
 	background-color: #000000;
-	opacity: 60%;
+	opacity: 80%;
 	width: 100vw;
-	height: 120vh;
+	height: 100vh;
 	top: 0;
 	left: 0;
+	&.--active{
+		transform:translateX(0)
+	}
 }

@@ -57,16 +57,16 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center ;
+	gap: 20px;
 	&__circle{
 		border-radius: 50%;
 		border: 5px dashed #a8b2d1;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		animation: rotation 2s forwards;
+		animation: rotation 3s forwards;
 		width: 200px;
 		height: 200px;
-		
 	}
 	&__img{
 		width:200px;
@@ -74,6 +74,18 @@ body {
 		position: absolute;
 	}
  }
+ .circle__animation{
+	animation: 1s forwards circleGrow;
+	animation-delay: 2s;
+ }
+@keyframes circleGrow{
+	to{
+		opacity:0;
+		width: 500px;
+		height: 500px;
+	}
+}
+
 
 @keyframes rotation{
 	from{
