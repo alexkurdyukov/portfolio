@@ -24,13 +24,16 @@ const App = () => {
     <div className="layout">
       {isLoading ? (
         <div className="loader">
-          <span className="loader__name">Loading</span>
-          <div className="loader__circle circle__animation"></div>
-          <span className="loader__name">portfolio</span>
+          <span className="loader__text glitch-loader">Loading</span>
+          <div className="loader__circle">
+            <div className="circle__inner">
+              
+            </div>
+          </div>
         </div>
       ) : (
         <>
-          <Header page={page} setPage={setPage} setIsLoading={setIsLoading}/>
+          <Header page={page} setPage={setPage} setIsLoading={setIsLoading} />
           {page === "intro" && <Intro page={page} setPage={setPage} />}
           {page === "about" && <About />}
           {page === "projects" && <Projects />}

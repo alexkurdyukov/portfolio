@@ -63,9 +63,8 @@
 		border: 1px solid #ffffff;
 		z-index: 11;
 		padding: 15px;
-		animation: 4s popupLight infinite;
 		@media (max-width: 1200px) {
-			top: 10vh;
+			top: 8vh;
 		}
 		&__technologies {
 			display: flex;
@@ -95,7 +94,7 @@
 			margin-bottom: 20px;
 			padding: 5px;
 			@media (max-width: 600px) {
-				font-size: 15px;
+				font-size: 13px;
 			}
 		}
 		&__image {
@@ -141,14 +140,14 @@
 				border: 1px solid #b961ff;
 			}
 			@media (max-width: 600px) {
-				font-size: 12px;
+				font-size: 13px;
 			}
 		}
 		&_green {
 			color: $mainColor;
 			font-size: 20px;
 			@media (max-width: 600px) {
-				font-size: 15px;
+				font-size: 13px;
 			}
 		}
 	}

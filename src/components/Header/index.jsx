@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Button from "../Button";
 import { ReactComponent as HeaderLogo } from "../../assets/images/header-logo.svg";
 import { useState } from "react";
@@ -15,7 +15,15 @@ const headerData = [
 const HeaderDesktop = ({ page, setPage, setIsLoading }) => {
   return (
     <>
-      <div className="header__logo-container">
+      <div
+        onClick={() => {
+          setIsLoading(true);
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 3000);
+        }}
+        className="header__logo-container"
+      >
         <HeaderLogo />
       </div>
       <nav className={`header__nav nav`}>
@@ -44,7 +52,7 @@ const HeaderMobile = ({ setPage, page, setIsLoading }) => {
   return (
     <>
       <div
-        className={`overlay ${overlayIsOpen?"--active":''}`}
+        className={`overlay ${overlayIsOpen ? "--active" : ""}`}
         onClick={() => {
           setOverlayOpen(false);
           setOpen(false);
@@ -69,7 +77,15 @@ const HeaderMobile = ({ setPage, page, setIsLoading }) => {
           ))}
         </div>
       </div>
-      <div className="header-mobile__logo">
+      <div
+        className="header-mobile__logo"
+        onClick={() => {
+          setIsLoading(true);
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 3000);
+        }}
+      >
         <HeaderLogo />
       </div>
       <div

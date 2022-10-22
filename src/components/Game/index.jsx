@@ -21,6 +21,7 @@ const Game = () => {
     x: "You win!",
     draw: "draw",
   };
+  const [gameOpened, setGameOpened] = useState(false);
   const [totalGameState, setTotalGameState] = useState("start");
   //на основании двух стэйтов будем делать проверку на багованное состояние игры - когда игрок или ии выигрывает последним ходом
   // в таком случае будем делать проверку, если gameState ==='draw' и одновременно выиграл кто-то, то будем выводить кто выиграл
@@ -29,17 +30,17 @@ const Game = () => {
   const [gameState, setGameState] = useState("start");
   const [squares, setSquares] = useState(defaultSquares());
   const [winner, setWinner] = useState(null);
-  
+
   const newGame = () => {
     setSquares(defaultSquares);
-    setGameState(null)
-    setWinner(null)
-  }
+    setGameState(null);
+    setWinner(null);
+  };
   const stateDefinder = () => {
-    console.log(`function is working , now state is ${totalGameState}`)
-    if (!winner && gameState=='draw'){
-      setTotalGameState('draw')
-      console.log(totalGameState)
+    console.log(`function is working , now state is ${totalGameState}`);
+    if (!winner && gameState == "draw") {
+      setTotalGameState("draw");
+      console.log(totalGameState);
     }
     if ((winner === "o" || winner === "x") && gameState == "draw") {
       setTotalGameState(winner);
@@ -66,12 +67,12 @@ const Game = () => {
     if (playerWon) {
       setWinner("x");
       setGameState("win");
-      stateDefinder()
+      stateDefinder();
     }
     if (computerWon) {
       setWinner("o");
       setGameState("lose");
-      stateDefinder()
+      stateDefinder();
     }
     const putComputerAt = (index) => {
       let newSquares = squares;
@@ -139,7 +140,7 @@ const Game = () => {
       <Board>
         {squares.map((square, index) => (
           <Square
-            key = {index}
+            key={index}
             x={square === "x" ? 1 : 0}
             o={square === "o" ? 1 : 0}
             onClick={() => handleSquareClick(index)}
@@ -147,9 +148,15 @@ const Game = () => {
         ))}
       </Board>
       <div className="game__buttons">
-        <Button onClick={newGame} className={`game__button`}>New Game</Button>
+        <Button onClick={newGame} className={`game__button`}>
+          New Game
+        </Button>
       </div>
-      {(gameState === "win" || gameState==='lose') && <div className="game__popup"><span className="game__popup-text">You {gameState}</span></div>}
+      {(gameState === "win" || gameState === "lose") && (
+        <div className="game__popup">
+          <span className="game__popup-text">You {gameState}</span>
+        </div>
+      )}
     </div>
   );
 };
