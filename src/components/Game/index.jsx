@@ -1,7 +1,5 @@
-import React, { Children, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../Button";
-import { ReactComponent as RestartIcon } from "../../assets/images/restartIcon.svg";
-import { calculateWinner } from "../../scripts/gameLogic";
 
 const defaultSquares = () => new Array(9).fill(null);
 const lines = [
@@ -21,12 +19,7 @@ const Game = () => {
     x: "You win!",
     draw: "draw",
   };
-  const [gameOpened, setGameOpened] = useState(false);
   const [totalGameState, setTotalGameState] = useState("start");
-  //на основании двух стэйтов будем делать проверку на багованное состояние игры - когда игрок или ии выигрывает последним ходом
-  // в таком случае будем делать проверку, если gameState ==='draw' и одновременно выиграл кто-то, то будем выводить кто выиграл
-  // если setState==='draw', но никто не выиграл, будем выдавать ничью
-  // напишем функцию stateDefinder
   const [gameState, setGameState] = useState("start");
   const [squares, setSquares] = useState(defaultSquares());
   const [winner, setWinner] = useState(null);

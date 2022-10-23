@@ -1,20 +1,14 @@
 import React from "react";
-import { useState } from "react";
 import Game from "../../components/Game";
-import TyppingPoint from "../../scripts/typingPoint";
-import TypeText from "../../scripts/typpingEffect";
+import TyppingPoint from "../../utils/typingPoint";
+import TypeText from "../../utils/typpingEffect";
 import Button from "../../components/Button";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
-import { Contacts } from "../Contacts";
-import { useEffect } from "react";
 
 const Intro = ({ page, setPage }) => {
   const windowWidth = useWindowWidth();
-  useEffect(() => {
-    console.log("state changes");
-  }, [page]);
   return (
-    <div className="intro">
+    <section className="intro">
       <div className="intro__wrapper wrapper">
         <div className="intro__content">
           <p className="intro__title">
@@ -24,7 +18,7 @@ const Intro = ({ page, setPage }) => {
           <h1 className="intro__container">
             <div className="intro__name glitch">Kurdyukov Alexey</div>
             <div className="intro__subtitle">
-              <TypeText speed={400} words={`I create solution with coding`} />
+              <TypeText speed={800} words={`I create solution with coding`} />
             </div>
           </h1>
           <p className="intro__description">
@@ -47,7 +41,7 @@ const Intro = ({ page, setPage }) => {
         </div>
         {windowWidth && windowWidth > 1200 && <Game />}
       </div>
-    </div>
+    </section>
   );
 };
 export { Intro };

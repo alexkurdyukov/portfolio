@@ -7,7 +7,6 @@ const TyppingPoint = () =>{
     useEffect(() => {
         if (subIndex===massive.length+1){
             setSubIndex(0)
-            console.log('working')
         }
         const timeOut = setTimeout(() => {
             setSubIndex(subIndex+1)

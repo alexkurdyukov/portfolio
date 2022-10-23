@@ -1,8 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Hystogramm } from "../../UI/Hystogramm";
 
-import firstPhoto from "../../assets/images/mainPhoto.jpg";
 import secondPhoto from "../../assets/images/mainPhoto2.jpg";
 import thirdPhoto from "../../assets/images/mainPhoto3.jpg";
 import fourthPhoto from "../../assets/images/mainPhoto4.jpg";
@@ -40,11 +38,8 @@ const infoData = [
 
 const About = () => {
   const [aboutPage, setAboutPage] = useState("education");
-  useEffect(() => {
-    console.log(aboutPage);
-  }, [aboutPage]);
   return (
-    <div className="about">
+    <section className="about">
       <div className="about__wrapper wrapper">
         <div className="info">
           <h3 className="info__header">Information</h3>
@@ -77,7 +72,7 @@ const About = () => {
           {aboutPage == "dev" && <p>ljdfbnksdgnsdjkgndfg</p>}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

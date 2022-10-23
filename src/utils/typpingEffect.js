@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
-import TyppingPoint from "./typingPoint";
 
 export default function TypeText({speed,words}) {
+  const [typeSpeed,setTypeSpeed] = useState(speed)
   const [subIndex, setSubIndex] = useState(0);
   const [blink, setBlink] = useState(true);
+  const lowSpeed = 400;
   let endIndicator = false;
-  // if (speed){ 
-  //   let typpingSpeed = speed;
-  // }
-  // typeWriter
   useEffect(() => {
     if ( subIndex === words.length) {
-      endIndicator = true
+      endIndicator = true;
+      setTypeSpeed(lowSpeed)
       return;
     }
     const timeout = setTimeout(() => {

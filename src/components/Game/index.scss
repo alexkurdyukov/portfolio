@@ -37,12 +37,12 @@
     font-size: 20px;
   }
   &__button{
-    color:#B961FF !important;
-    border: 1px solid #B961FF !important;
+    color:#B961FF ;
+    border: 1px solid #B961FF ;
     animation: light 6s linear; 
     &:hover{
       color: #ffffff;
-      box-shadow:0 0 15px 5px #B961FF !important;
+      box-shadow:0 0 15px 5px #B961FF ;
     }
   }
   &__popup{

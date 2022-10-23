@@ -8,7 +8,7 @@ import projectPreview3 from "../../assets/images/PortfolioPreview.png";
 import Button from "../../components/Button";
 import gitLogo from "../../assets/images/icon-github.svg";
 import verselLogo from "../../assets/images/verselLogo.svg";
-import { scrollAvailable, scrollNotAvailable } from "../../scripts/scrollBlock";
+import {scrollNotAvailable } from "../../utils/scrollBlock";
 import { Popup } from "../../components/Popup";
 
 const projectsData = [
@@ -53,7 +53,7 @@ const Projects = () => {
   const [projectState, setProjectState] = useState({});
   return (
     <>
-      <div className="projects">
+      <section className="projects">
         <div className="projects__wrapper wrapper">
           {projectsData.map((project, index) => (
             <div
@@ -97,7 +97,7 @@ const Projects = () => {
             </div>
           ))}
         </div>
-      </div>
+      </section>
       {projectOpen && (
         <>
           <Popup setProjectOpen={setProjectOpen} projectState={projectState}>

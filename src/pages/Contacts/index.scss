@@ -43,7 +43,7 @@
 		row-gap: 50px;
 		width: 100%;
 		margin-bottom: 40px;
-		@media(max-width: 450px){
+		@media(max-width: 490px){
 			grid-template-columns: repeat(1, minmax(100px, 1fr));
 			row-gap: 60px;
 		}
