@@ -335,7 +335,7 @@
   flex-direction: column;
   gap: 35px;
   position: relative;
-  padding: 20px 0;
+  padding: 10px 0;
   @media (max-width: 900px) {
     gap: 15px;
   }
@@ -360,6 +360,26 @@
     padding: 5px 10px;
   }
 }
+
+.dev{
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__item{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 20px;
+    background-color: $secondColor;
+
+  }
+}
+
 
 @keyframes innerlineChanges {
   to {

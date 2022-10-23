@@ -29,14 +29,13 @@ import Button from "../../components/Button/index.jsx";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
-
 const infoData = [
   { name: "education", imageLink: EducationLogo },
   { name: "hobbies", imageLink: HobbieLogo },
   { name: "biography", imageLink: BiographyLogo },
   { name: "hard-skills", imageLink: HardSkillsLogo },
   { name: "soft-skills", imageLink: SoftSkillsLogo },
-  {name:'dev', imageLink:DevLogo}
+  { name: "dev", imageLink: DevLogo },
 ];
 
 const About = () => {
@@ -53,7 +52,9 @@ const About = () => {
             {infoData.map((point, index) => (
               <div
                 key={index}
-                className={`info-point ${(aboutPage==point.name)?'--active':''}` }
+                className={`info-point ${
+                  aboutPage == point.name ? "--active" : ""
+                }`}
                 onClick={() => {
                   setAboutPage(point.name);
                 }}
@@ -73,6 +74,7 @@ const About = () => {
           {aboutPage == "biography" && <Biography />}
           {aboutPage == "hard-skills" && <HardSkills />}
           {aboutPage == "soft-skills" && <SoftSkills />}
+          {aboutPage == "dev" && <p>ljdfbnksdgnsdjkgndfg</p>}
         </div>
       </div>
     </div>
@@ -319,6 +321,32 @@ const SoftSkills = () => {
           {softSkill.name}
         </div>
       ))}
+    </div>
+  );
+};
+
+const devData = [
+  {
+    id:1,
+    time: "8 month",
+    company: "self-learning",
+    description:
+      "I use react,sass, typescript. I have developed some react apps as PET projects. You can check it in the project page",
+  },
+];
+
+const Dev = () => {
+  return (
+    <div className="dev">
+      <div className="dev__wrapper wrapper">
+        {devData.map((e, index) => (
+          <div className="dev__item" key={index}>
+            <h4 className="dev__time">{e.time}</h4>
+            <span className="dev__company">{e.company}</span>
+            <p className='dev__description'>{e.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
