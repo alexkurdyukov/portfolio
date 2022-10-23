@@ -69,7 +69,7 @@ const About = () => {
           {aboutPage == "biography" && <Biography />}
           {aboutPage == "hard-skills" && <HardSkills />}
           {aboutPage == "soft-skills" && <SoftSkills />}
-          {aboutPage == "dev" && <p>ljdfbnksdgnsdjkgndfg</p>}
+          {aboutPage == "dev" && <Dev/>}
         </div>
       </div>
     </section>
@@ -337,7 +337,7 @@ const Dev = () => {
         {devData.map((e, index) => (
           <div className="dev__item" key={index}>
             <h4 className="dev__time">{e.time}</h4>
-            <span className="dev__company">{e.company}</span>
+            <span className="dev__company">company: {e.company}</span>
             <p className='dev__description'>{e.description}</p>
           </div>
         ))}

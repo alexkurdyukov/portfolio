@@ -375,8 +375,19 @@
     flex-direction: column;
     gap: 10px;
     border-radius: 20px;
-    background-color: $secondColor;
-
+    border: 1px solid #ffffff;
+    padding: 20px;
+  }
+  &__time{
+    color:#e07c08;
+    font-size: 15px;
+  }
+  &__company{
+    color: #b961ff;
+    font-size: 15px;
+  }
+  &__description{
+    font-size: 18px;
   }
 }
 
