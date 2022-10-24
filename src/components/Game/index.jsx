@@ -14,16 +14,10 @@ const lines = [
 ];
 
 const Game = () => {
-  const answerData = {
-    o: "Computer win!",
-    x: "You win!",
-    draw: "draw",
-  };
   const [totalGameState, setTotalGameState] = useState("start");
   const [gameState, setGameState] = useState("start");
   const [squares, setSquares] = useState(defaultSquares());
   const [winner, setWinner] = useState(null);
-
   const newGame = () => {
     setSquares(defaultSquares);
     setGameState(null);
