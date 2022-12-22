@@ -5,6 +5,7 @@ import { ReactComponent as LinkImage } from "../../assets/images/link-image.svg"
 import projectPreview1 from "../../assets/images/AperturePreview.png";
 import projectPreview2 from "../../assets/images/SattelitePreview.png";
 import projectPreview3 from "../../assets/images/PortfolioPreview.png";
+import projectPreview4 from "../../assets/images/mapPreview.png";
 import Button from "../../components/Button";
 import gitLogo from "../../assets/images/icon-github.svg";
 import verselLogo from "../../assets/images/verselLogo.svg";
@@ -16,34 +17,45 @@ const projectsData = [
     name: "Aperture Studio",
     technologies: ["HTML", "CSS"],
     description:
-      "My first project on HTML,CSS.Also adaptive layout is implemented on it",
+      "Simply html and css project with accent on adaptive layout",
     verselLink: "https://aperture-studio-maket.vercel.app/",
     githubLink: "https://github.com/alexkurdyukov/Aperture-Studio-Maket",
     previewBackground: projectPreview1,
     modaleDescription:
-      "My first project on which I used html css. I paid a lot of attention to adaptive layout without using frameworks. Adaptive layout is made using media queries, as well as flex and grid technologies. There are also simple animations",
+      "Simply project on html and css. I paid a lot of attention to adaptive layout without using frameworks. Adaptive layout is made using media queries, as well as flex and grid technologies. There are also  animations",
   },
   {
     name: "Sattelite Images",
     technologies: ["HTML", "CSS", "JavaScript"],
     description:
-      "Second project. I first time have used JavaScript, made adaptive layout and worked with keyframes animations",
+      "Html/scss/JS project. I did JavaScript logics, adaptive layout and worked with keyframes animations",
     verselLink: "https://sattelite-images-maket.vercel.app/",
     githubLink: "https://github.com/alexkurdyukov/Sattelite-Images-Maket",
     previewBackground: projectPreview2,
     modaleDescription:
-      "My second project, in which I used not only html, css, but also javascript. Adaptive layout based on flex and grid technologies is implemented in the work. There are a large number of animations, as well as interesting JS features",
+      "My that project I used html, css and native javascript. Adaptive layout based on flex and grid technologies is implemented in the work. There are a large number of animations, as well as interesting JS features",
   },
   {
     name: "React Portfolio",
     technologies: ["HTML", "SCSS", "React JS"],
     description:
-      "It's my first react experiance,where i have used react states, hooks and also SCSS",
+      "It's my react portfolio. I wrote tic tac toe , some switchable pages about me, and form with validation ",
     verselLink: "https://sattelite-images-maket.vercel.app/",
     githubLink: "https://github.com/alexkurdyukov/Sattelite-Images-Maket",
     previewBackground: projectPreview3,
     modaleDescription:
-      "My third project. I tried the react library on it. In the process, I created a SPA that contains several pages between which you can switch. On this project, we managed to work with states, props, basic hooks (useEffect,useState), with form validation using reactHookForm",
+      "That is react project. I used a react library on it. In the process, I created a SPA that contains several pages between which you can switch. On this project, we managed to work with states, props, basic hooks (useEffect,useState), with form validation using reactHookForm",
+  },
+  {
+    name: "Attraction interactive map",
+    technologies: ["React", "Redux", "SCSS modules", 'Typescript'],
+    description:
+      "Interesting project with REST API. I used redux store to contain data logic and typescript to tipizate hooks and data",
+    verselLink: "https://maps-seven.vercel.app/",
+    githubLink: "https://github.com/alexkurdyukov/restaurant-app",
+    previewBackground: projectPreview4,
+    modaleDescription:
+      "Interesting project with REST API. I use rapidAPI.com and their services to take information about cities and attractions in them. I used redux store to contain data logic and typescript to tipizate hooks and data",
   },
 ];
 

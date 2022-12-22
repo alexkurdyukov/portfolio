@@ -3,6 +3,7 @@
   display: flex;
   flex-grow: 1;
   position: relative;
+  overflow: hidden;
   @media (max-width: 1200px) {
     padding: 2rem 5vw;
   }
@@ -47,7 +48,7 @@
       rgba(17, 34, 64, 1) 100%
     );
     z-index: 0;
-    width: 600px;
+    width: 500px;
     height: 600px;
     border-radius: 50%;
     filter: blur(60px);

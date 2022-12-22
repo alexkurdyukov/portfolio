@@ -3,8 +3,10 @@ import { scrollAvailable } from "../../utils/scrollBlock";
 
 const Popup = ({ children, setProjectOpen, projectState }) => {
 	return (
-		<div className="popup">
-			<div className="project-popup wrapper">{children}</div>
+		<>
+			<div className="popup">
+				<div className="project-popup wrapper">{children}</div>
+			</div>
 			<div
 				onClick={() => {
 					setProjectOpen(false);
@@ -12,9 +14,8 @@ const Popup = ({ children, setProjectOpen, projectState }) => {
 				}}
 				className="popup__overlay"
 			></div>
-		</div>
+		</>
 	);
 };
 
 export { Popup };
-

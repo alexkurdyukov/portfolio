@@ -34,13 +34,14 @@ body {
   font-size: $mainSize;
   color: #a8b2d1;
 }
-
+html { overflow: hidden; }
 .layout {
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
 }
 .wrapper {
   margin: 0 auto;
