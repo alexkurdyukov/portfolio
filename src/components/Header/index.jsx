@@ -43,7 +43,7 @@ const HeaderDesktop = ({ page, setPage, setIsLoading }) => {
 					</div>
 				))}
 			</nav>
-			<Button linkType>Resume</Button>
+			
 		</>
 	);
 };
