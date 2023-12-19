@@ -8,8 +8,7 @@ import { About } from "./pages/About";
 import { Contacts } from "./pages/Contacts";
 import { CSSTransition } from "react-transition-group";
 import "./assets/scss/index.scss";
-import HeaderLogo from "./assets/images/header-logo.svg";
-import { set } from "react-hook-form";
+
 
 const App = () => {
   const [page, setPage] = useState("intro");
@@ -22,7 +21,7 @@ const App = () => {
     setTimeout(() => {
       setIsLoading(false);
     }, 3000);
-  }, []);
+  }, [])
 
   return (
     <div className="layout">
