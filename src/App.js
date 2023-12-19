@@ -44,7 +44,7 @@ const App = () => {
           {windowWidth && windowWidth > 1650 && <Socials />}
         </>
       )}
-
+      
     </div>
   );
 };
