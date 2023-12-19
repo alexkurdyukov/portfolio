@@ -198,7 +198,7 @@ const Slider = () => {
 		]
 	);
 	return (
-		<>
+		
 			<div className="navigation-wrapper">
 				<div ref={sliderRef} className="keen-slider slider-box">
 					{photoData.map((photo, index) => (
@@ -211,7 +211,7 @@ const Slider = () => {
 					))}
 				</div>
 			</div>
-		</>
+		
 	);
 };
 
