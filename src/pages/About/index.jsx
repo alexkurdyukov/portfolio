@@ -33,7 +33,6 @@ const infoData = [
 	{ name: "biography", imageLink: BiographyLogo },
 	{ name: "hard-skills", imageLink: HardSkillsLogo },
 	{ name: "soft-skills", imageLink: SoftSkillsLogo },
-	// { name: "dev", imageLink: DevLogo },
 ];
 
 const About = () => {
@@ -69,7 +68,6 @@ const About = () => {
 					{aboutPage == "biography" && <Biography />}
 					{aboutPage == "hard-skills" && <HardSkills />}
 					{aboutPage == "soft-skills" && <SoftSkills />}
-					{/* {aboutPage == "dev" && <Dev />} */}
 				</div>
 			</div>
 		</section>

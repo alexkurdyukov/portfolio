@@ -13,22 +13,24 @@ import { set } from "react-hook-form";
 
 const App = () => {
   const [page, setPage] = useState("intro");
+
   const windowWidth = useWindowWidth();
+
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 3000);
   }, []);
+
   return (
     <div className="layout">
       {isLoading ? (
         <div className="loader">
           <span className="loader__text glitch-loader">Loading</span>
           <div className="loader__circle">
-            <div className="circle__inner">
-              
-            </div>
+            <div className="circle__inner"></div>
           </div>
         </div>
       ) : (
