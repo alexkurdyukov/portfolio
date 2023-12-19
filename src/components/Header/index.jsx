@@ -5,9 +5,6 @@ import { useState } from "react";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
 import { scrollAvailable, scrollNotAvailable } from "../../utils/scrollBlock";
 
-
-
-
 const headerData = [
 	{ name: "intro", id: "01" },
 	{ name: "about", id: "02" },
@@ -16,6 +13,8 @@ const headerData = [
 ];
 
 const HeaderDesktop = ({ page, setPage, setIsLoading }) => {
+	console.log('test')
+	console.log('test 2')
 	const screenLoad = () => {
 		setIsLoading(true);
 		setTimeout(() => {
