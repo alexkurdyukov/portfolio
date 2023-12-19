@@ -23,6 +23,7 @@ const HeaderDesktop = ({ page, setPage, setIsLoading }) => {
 			setIsLoading(false);
 		}, 3000);
 	};
+	
 	return (
 		<>
 			<div
