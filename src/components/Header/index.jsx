@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
 import { scrollAvailable, scrollNotAvailable } from "../../utils/scrollBlock";
 
+
 const headerData = [
 	{ name: "intro", id: "01" },
 	{ name: "about", id: "02" },
