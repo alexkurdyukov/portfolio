@@ -31,7 +31,6 @@ const App = () => {
           <span className="loader__text glitch-loader">Loading</span>
           <div className="loader__circle">
             <div className="circle__inner">
-            
             </div>
           </div>
         </div>
