@@ -17,13 +17,14 @@ const HeaderDesktop = ({ page, setPage, setIsLoading }) => {
 	console.log('test')
 	console.log('test2')
 	console.log('test3')
+	
 	const screenLoad = () => {
 		setIsLoading(true);
 		setTimeout(() => {
 			setIsLoading(false);
 		}, 3000);
 	};
-	
+
 	return (
 		<>
 			<div
