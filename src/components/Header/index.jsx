@@ -7,6 +7,7 @@ import { scrollAvailable, scrollNotAvailable } from "../../utils/scrollBlock";
 
 
 
+
 const headerData = [
 	{ name: "intro", id: "01" },
 	{ name: "about", id: "02" },
@@ -45,14 +46,13 @@ const HeaderDesktop = ({ page, setPage, setIsLoading }) => {
 					</div>
 				))}
 			</nav>
-			
 		</>
 	);
 };
 
 const HeaderMobile = ({ setPage, setIsLoading }) => {
 	const screenLoad = () => {
-		screenLoad()
+		screenLoad();
 	};
 	const [isOpen, setOpen] = useState(false);
 	const [overlayIsOpen, setOverlayOpen] = useState(false);
@@ -70,7 +70,7 @@ const HeaderMobile = ({ setPage, setIsLoading }) => {
 				<div className="mobile-menu">
 					{headerData.map((item) => (
 						<div
-							onClick={() => { 
+							onClick={() => {
 								setPage(item.name);
 								setOpen(!isOpen);
 								setOverlayOpen(!overlayIsOpen);
