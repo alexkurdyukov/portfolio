@@ -14,6 +14,7 @@ const headerData = [
 
 const HeaderDesktop = ({ page, setPage, setIsLoading }) => {
 	console.log('test')
+	console.log('test')
 	console.log('test 2')
 	const screenLoad = () => {
 		setIsLoading(true);
